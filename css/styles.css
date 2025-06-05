@@ -69,13 +69,8 @@ body {
 }
 
 /* --- Navbar --- */
-/* === css/styles.css (Perbaikan untuk Navbar) === */
-
-/* --- Navbar --- */
 .c-navbar {
-  background-color: #FEF6F6; /* Revisi: Warna navbar diubah */
-  /* box-shadow: none; /* Revisi: Shadow dihilangkan. Baris ini bisa dihapus atau dikosongkan. */
-  position: sticky;
+  background-color: #FEF6F6; 
   top: 0;
   left: 0;
   right: 0;
