@@ -17,6 +17,7 @@
                 'brand-pink-light': '#FEF6F6',
                 'brand-pink-med': '#FBCFE8',
                 'brand-pink-accent': '#E53E99',
+                'brand-navbar-bg': '#FAE8ED', // Warna Navbar baru
                 'brand-gray-dark': '#1F2937',
                 'brand-gray-med': '#4B5563',
                 'brand-gray-light': '#D1D5DB',
@@ -24,7 +25,7 @@
                 'brand-button-bg': '#303030',
                 'brand-button-hover': '#1A1A1A',
                 'brand-hero-supertitle': '#A0AEC0',
-                'brand-contact-bg': '#2D3748',
+                'brand-contact-bg': '#2D3748', // Background gelap untuk Contact CTA Card
                 'brand-contact-text': '#E2E8F0',
               }
             }
@@ -43,10 +44,7 @@
     <header class="c-navbar">
         <div class="c-navbar__container">
             <a href="#" id="nav-logo" class="c-navbar__logo">Shanda’s Portofolio</a>
-            <button id="mobile-menu-button" class="c-navbar__mobile-toggle" aria-label="Buka Menu" aria-expanded="false">
-                <svg class="icon" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
-            <nav id="desktop-menu" class="c-navbar__desktop-menu">
+            <nav class="c-navbar__menu">
                 <ul class="c-navbar__list">
                     <li><a href="#experience" class="c-navbar__link">Experience</a></li>
                     <li><a href="#skills" class="c-navbar__link">Skill</a></li>
@@ -56,15 +54,6 @@
                 </ul>
             </nav>
         </div>
-        <nav id="mobile-menu" class="c-navbar__mobile-menu">
-            <ul class="c-navbar__mobile-list">
-                <li><a href="#experience" class="c-navbar__mobile-link">Experience</a></li>
-                <li><a href="#skills" class="c-navbar__mobile-link">Skill</a></li>
-                <li><a href="#projects" class="c-navbar__mobile-link">Project</a></li>
-                <li><a href="#achievements" class="c-navbar__mobile-link">Achievement</a></li>
-                <li><a href="#contact" class="c-navbar__mobile-link">Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
@@ -73,6 +62,7 @@
                  <img src="images/header.svg" alt="Decorative Background" class="c-hero__bg-image">
             </div>
             <div class="c-hero__content">
+                {/* */}
                 <h2 class="c-hero__supertitle">PORTOFOLIO</h2>
                 <h1 class="c-hero__title">ARSHANDA RIZA PUTRI</h1>
                 <p class="c-hero__subtitle">
@@ -84,10 +74,12 @@
             </div>
         </section>
 
+        {/* */}
         <section id="experience" class="c-section bg-brand-white">
             <div class="c-section__container">
                 <h2 class="c-section__title">EXPERIENCE</h2>
                 <div class="c-timeline">
+                    {/* */}
                     <div class="c-timeline__item">
                         <div class="c-timeline__point"></div>
                         <div class="c-timeline__content">
@@ -95,7 +87,7 @@
                             <p class="c-timeline__item-date">June 2022 - Desember 2023</p>
                         </div>
                     </div>
-                    <div class="c-timeline__item">
+                    <div class="c-timeline__item c-timeline__item--right">
                         <div class="c-timeline__point"></div>
                         <div class="c-timeline__content">
                             <h3 class="c-timeline__item-title">Article Writer</h3>
@@ -107,22 +99,23 @@
                         <div class="c-timeline__content">
                             <h3 class="c-timeline__item-title">PT Trakindo Utama</h3>
                             <p class="c-timeline__item-date">June 2022 - Desember 2023</p>
+                             <p class="c-timeline__item-description">Handled daily data operations (entry, processing, analysis) with CMS and SAP for accuracy. Provided insightful reports, managed administrative documents (e.g., invoices), and ensured consistent, accurate data across company systems.</p>
                         </div>
                     </div>
-                    <div class="c-timeline__item">
+                    <div class="c-timeline__item c-timeline__item--right">
                         <div class="c-timeline__point"></div>
                         <div class="c-timeline__content">
                             <h3 class="c-timeline__item-title">On-The Job Training</h3>
                             <p class="c-timeline__item-description">Handled daily data operations (entry, processing, analysis) with CMS and SAP for accuracy. Provided insightful reports, managed administrative documents (e.g., invoices), and ensured consistent, accurate data across company systems.</p>
                         </div>
                     </div>
-                    <div class="c-timeline__item">
+                     <div class="c-timeline__item">
                         <div class="c-timeline__point"></div>
                         <div class="c-timeline__content">
                             <h3 class="c-timeline__item-title">Coming Soon :)</h3>
                         </div>
                     </div>
-                    <div class="c-timeline__item">
+                    <div class="c-timeline__item c-timeline__item--right">
                         <div class="c-timeline__point"></div>
                         <div class="c-timeline__content">
                             <h3 class="c-timeline__item-title">Open To Work</h3>
@@ -132,13 +125,12 @@
             </div>
         </section>
 
+        {/* */}
         <section id="skills" class="c-section bg-brand-pink-light">
             <div class="c-section__container c-skills__layout">
-                <div class="c-skills__header-area">
+                <div class="c-skills__title-column">
                     <h2 class="c-section__title c-skills__title">MY SKILLS</h2>
-                    <p class="c-skills__subtitle">
-                        Explore my skill in Front-End Development, Web Design, Data Analyst, and Content Writing
-                    </p>
+                    {/* Deskripsi "Explore my skill..." akan dihilangkan dari sini jika tidak ada di desain final untuk area ini */}
                 </div>
                 <div class="c-skills__accordion-area">
                     <div class="c-accordion-item">
@@ -159,23 +151,24 @@
                             <p>Creating well-researched articles on diverse topics. Experienced in SEO content optimization (keywords, meta descriptions, title tags) for better online visibility, along with careful editing to ensure high-quality, error-free writing.</p>
                         </div>
                     </div>
-                    <div class="c-accordion-item">
+                    <div class="c-accordion-item"> 
                         <button class="c-accordion-button" aria-expanded="false" aria-controls="skill-content-3">
-                            <span>Content Writing</span>
+                            <span>Content Writing</span> {/* Judul disesuaikan dengan desain, ini item ketiga */}
                             <span class="c-accordion-icon">+</span>
                         </button>
                         <div id="skill-content-3" class="c-accordion-content">
-                           <p>Additional details about general Content Writing can be placed here. The design shows three accordion items, the last one simpler.</p>
+                           <p>Details for the third skill item (Content Writing as per design).</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        {/* */}
         <section id="projects" class="c-section bg-brand-white">
             <div class="c-section__container">
                 <h2 class="c-section__title">MY PROJECT</h2>
-                <div class="c-card c-project-card">
+                <div class="c-card c-project-card"> 
                     <div class="c-project-card__image-area">
                         <img src="images/project1.svg" alt="DonasiKita Project Mockup" class="c-project-card__image">
                     </div>
@@ -188,16 +181,18 @@
                         </p>
                     </div>
                 </div>
+                {/* Tombol CTA di bawah card project, sesuai desain */}
                 <div class="c-section__cta">
                      <a href="#contact" class="c-button c-button--primary">Let’s Work Together!</a>
                 </div>
             </div>
         </section>
 
+        {/* */}
         <section id="achievements" class="c-section bg-brand-pink-light">
             <div class="c-section__container">
                 <h2 class="c-section__title">ACHIEVEMENT</h2>
-                <div class="c-card c-achievement-card">
+                <div class="c-card c-achievement-card"> 
                     <div class="c-achievement-card__images-container">
                         <img src="images/achivement1.svg" alt="PKM KC Achievement Image 1" class="c-achievement-card__image">
                         <img src="images/achivement2.svg" alt="PKM KC Achievement Image 2" class="c-achievement-card__image">
@@ -215,33 +210,26 @@
                         </p>
                     </div>
                 </div>
-                 <div class="c-section__cta">
+                <div class="c-section__cta">
                      <a href="#contact" class="c-button c-button--primary">Let’s Work Together!</a>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="c-contact-cta">
-            <div class="c-contact-cta__container">
-                <div class="c-contact-cta__header">
-                    <h2 class="c-contact-cta__title">INTERESTED TO WORKING TOGETHER?</h2>
-                    <p class="c-contact-cta__subtitle">CONTACT ME!</p>
+        <section id="contact" class="c-contact-card-section">
+            <div class="c-contact-card">
+                <div class="c-contact-card__header">
+                    <h2 class="c-contact-card__title">INTERESTED TO WORKING TOGETHER?</h2>
+                    <p class="c-contact-card__subtitle">CONTACT ME!</p>
                 </div>
-                <div class="c-contact-cta__email-group">
-                    <a id="emailLink" href="mailto:arshandariza@gmail.com" class="c-contact-cta__email-link">
-                        <img src="images/mail.svg" alt="Email" class="c-contact-cta__email-icon">
+                <div class="c-contact-card__email-group">
+                    <a id="emailLink" href="mailto:arshandariza@gmail.com" class="c-contact-card__email-link">
+                        <img src="images/mail.svg" alt="Email" class="c-contact-card__email-icon">
                         <span id="emailToCopy">arshandariza@gmail.com</span>
                     </a>
-                    <button id="copyEmailButton" class="c-button c-button--copy">COPY</button>
+                    <button id="copyEmailButton" class="c-button c-button--copy c-contact-card__copy-button">COPY</button>
                 </div>
-                <span id="copyFeedback" class="c-contact-cta__feedback" style="display: none;">Email tersalin!</span>
-
-                <div class="c-contact-cta__footer-info">
-                    <h3 class="c-contact-cta__footer-name">ARSHANDA RIZA PUTRI</h3>
-                    <p class="c-contact-cta__footer-desc">
-                        Informatics Engineering student interested in Frontend Development, Web Development, and Data Analysis. Skilled with frontend tools (HTML, CSS, JavaScript, React, Next.js) and Python.
-                    </p>
-                </div>
+                <span id="copyFeedback" class="c-contact-card__feedback" style="display: none;">Email tersalin!</span>
             </div>
         </section>
     </main>
@@ -251,8 +239,9 @@
             <div class="c-footer__grid">
                 <div class="c-footer__column">
                     <h4 class="c-footer__title">ARSHANDA RIZA PUTRI</h4>
+                    {/* Deskripsi diri dipindahkan ke sini */}
                     <p class="c-footer__description">
-                        Passionate Informatics Engineering student focused on creating impactful digital experiences.
+                        Informatics Engineering student interested in Frontend Development, Web Development, and Data Analysis. Skilled with frontend tools (HTML, CSS, JavaScript, React, Next.js) and Python.
                     </p>
                 </div>
                 <div class="c-footer__column">
