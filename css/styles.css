@@ -70,119 +70,112 @@ body {
 
 /* --- Navbar --- */
 .c-navbar {
-  background-color: #fef6f6; 
-  position: sticky;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
+    background-color: #FEF6F6; /* Diubah sesuai permintaan terakhir agar sama dengan body */
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    /* box-shadow: none; /* Dihilangkan sesuai permintaan */
 }
-
 .c-navbar__container {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 20px; /* Padding horizontal untuk container navbar */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 72px; /* Tinggi navbar konsisten, bisa disesuaikan */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px; /* Padding horizontal untuk container navbar */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 72px; /* Tinggi navbar konsisten, bisa disesuaikan */
 }
-
 .c-navbar__logo {
-  font-size: 1.125rem; /* text-lg */
-  font-weight: 700; /* bold */
-  color: #1F2937; /* brand-gray-dark (warna teks logo) */
-  text-decoration: none;
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 700; /* bold */
+    color: #1F2937; /* brand-gray-dark (warna teks logo) */
+    text-decoration: none;
 }
-
 .c-navbar__mobile-toggle {
-  display: none; /* Defaultnya disembunyikan untuk desktop, tampil di mobile via media query */
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
-  color: #1F2937; /* Warna ikon hamburger */
+    display: none; /* Defaultnya disembunyikan untuk desktop, tampil di mobile via media query */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: #1F2937; /* Warna ikon hamburger */
 }
 .c-navbar__mobile-toggle .icon { /* Kelas untuk SVG ikon di dalam tombol */
     width: 24px;
     height: 24px;
 }
-
 .c-navbar__menu { /* Ini adalah tag <nav> yang membungkus <ul> untuk desktop */
-  display: none; /* Defaultnya disembunyikan untuk mobile */
+    display: none; /* Defaultnya disembunyikan untuk mobile */
 }
-
 .c-navbar__list { /* Ini adalah tag <ul> */
-  display: flex; /* Membuat <li> (item menu) berjejer horizontal */
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  align-items: center; /* Menjaga item menu sejajar secara vertikal */
+    display: flex; /* Membuat <li> (item menu) berjejer horizontal */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center; /* Menjaga item menu sejajar secara vertikal */
 }
-
 .c-navbar__list li + li { /* Memberi jarak antar item menu desktop */
-  margin-left: 1.75rem; /* Sesuaikan jaraknya jika perlu */
+    margin-left: 1.75rem; /* Sesuaikan jaraknya jika perlu */
 }
-
 .c-navbar__link { /* Untuk setiap <a> di menu desktop */
-  font-size: 0.9rem; /* Ukuran font link navbar */
-  color: #4B5563; /* brand-gray-med (warna teks link) */
-  text-decoration: none;
-  transition: color 0.3s ease;
-  padding: 0.5rem 0.25rem; /* Padding agar area klik lebih baik */
+    font-size: 0.9rem; /* Ukuran font link navbar */
+    color: #4B5563; /* brand-gray-med (warna teks link) */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 0.5rem 0.25rem; /* Padding agar area klik lebih baik */
 }
 .c-navbar__link:hover {
-  color: #E53E99; /* brand-pink-accent (warna hover link) */
+    color: #E53E99; /* brand-pink-accent (warna hover link) */
 }
 
 /* --- Mobile Menu Dropdown --- */
 .c-navbar__mobile-menu {
-  display: none; /* Default disembunyikan */
-  background-color: #FFFFFF; /* Background menu dropdown */
-  position: absolute;
-  top: 72px; /* Tepat di bawah navbar (sesuaikan dengan tinggi .c-navbar__container) */
-  left: 0;
-  right: 0;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Shadow untuk dropdown */
-  border-top: 1px solid #E5E7EB; /* Garis pemisah tipis */
+    display: none; /* Default disembunyikan */
+    background-color: #FFFFFF; /* Background menu dropdown */
+    position: absolute;
+    top: 72px; /* Tepat di bawah navbar (sesuaikan dengan tinggi .c-navbar__container) */
+    left: 0;
+    right: 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Shadow untuk dropdown */
+    border-top: 1px solid #E5E7EB; /* Garis pemisah tipis */
 }
 .c-navbar__mobile-menu.is-open { /* Kelas ini ditambahkan/dihapus oleh JavaScript */
-  display: block;
+    display: block;
 }
 .c-navbar__mobile-list {
-  list-style: none;
-  margin: 0;
-  padding: 0.5rem 0; /* Padding atas-bawah untuk list */
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 0; /* Padding atas-bawah untuk list */
 }
 .c-navbar__mobile-link {
-  display: block;
-  padding: 0.75rem 1rem; /* Padding untuk setiap link mobile */
-  text-align: center;
-  text-decoration: none;
-  color: #4B5563; /* Warna teks link mobile */
-  transition: background-color 0.3s ease;
+    display: block;
+    padding: 0.75rem 1rem; /* Padding untuk setiap link mobile */
+    text-align: center;
+    text-decoration: none;
+    color: #4B5563; /* Warna teks link mobile */
+    transition: background-color 0.3s ease;
 }
 .c-navbar__mobile-link:hover {
-  background-color: #FFF1F2; /* Warna hover background link mobile */
+    background-color: #FFF1F2; /* Warna hover background link mobile */
 }
 
 /* --- Media Query untuk Responsivitas Navbar --- */
 @media (max-width: 767px) { /* Di bawah md breakpoint (misalnya 768px) */
-  .c-navbar__desktop-menu { /* Menggunakan .c-navbar__menu untuk nav desktop */
-    display: none; /* Sembunyikan menu desktop */
-  }
-  .c-navbar__menu { /* Mengacu pada <nav id="desktop-menu"> */
-    display: none;
-  }
-  .c-navbar__mobile-toggle {
-    display: block; /* Tampilkan tombol hamburger */
-  }
-  .c-navbar__container {
-    padding: 0 1rem; /* Padding container navbar di mobile lebih kecil */
-  }
+    .c-navbar__desktop-menu { /* Menggunakan .c-navbar__menu untuk nav desktop */
+        display: none; /* Sembunyikan menu desktop */
+    }
+    .c-navbar__menu { /* Mengacu pada <nav id="desktop-menu"> */
+        display: none;
+    }
+    .c-navbar__mobile-toggle {
+        display: block; /* Tampilkan tombol hamburger */
+    }
+    .c-navbar__container {
+        padding: 0 1rem; /* Padding container navbar di mobile lebih kecil */
+    }
 }
-
 @media (min-width: 768px) { /* md breakpoint ke atas */
     .c-navbar__menu { /* Mengacu pada <nav id="desktop-menu"> */
         display: flex; /* Pastikan menu desktop tampil */
@@ -195,7 +188,7 @@ body {
 /* --- Hero Section --- */
 .c-hero {
     position: relative;
-    min-height: calc(100vh - 68px);
+    min-height: calc(100vh - 72px); /* Disesuaikan dengan tinggi navbar baru */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -216,8 +209,8 @@ body {
 }
 .c-hero__bg-image {
     width: 100%;
-    max-width: 900px; /* Ukuran gambar header sedikit lebih besar */
-    transform: scale(1.25); /* Perbesar gambar sedikit lagi dari sebelumnya */
+    max-width: 950px; /* Ukuran gambar header sedikit lebih besar */
+    transform: scale(1.2); /* Perbesar gambar sedikit */
     height: auto;
     object-fit: contain;
     opacity: 0.5; /* Sedikit lebih transparan */
@@ -227,14 +220,14 @@ body {
     z-index: 1;
 }
 .c-hero__supertitle {
-    font-size: 1.875rem; /* text-3xl (lebih kecil dari sebelumnya) */
+    font-size: 1.75rem; /* Lebih kecil lagi */
     font-weight: 700;
     color: #A0AEC0; /* brand-hero-supertitle */
     margin-bottom: 0;
     line-height: 1; /* Rapatkan ke judul utama */
 }
 .c-hero__title {
-    font-size: 3.75rem; /* text-6xl (untuk layar besar) */
+    font-size: 3.25rem; /* Lebih kecil lagi */
     font-weight: 800;
     color: #1F2937;
     margin-top: 0.25rem; /* mt-1 */
@@ -245,7 +238,7 @@ body {
     max-width: 42rem;
     margin-left: auto;
     margin-right: auto;
-    font-size: 1.125rem;
+    font-size: 1.05rem; /* Sedikit lebih kecil */
     line-height: 1.75;
     color: #4B5563;
 }
@@ -330,7 +323,7 @@ body {
     display: table;
     clear: both;
 }
-.c-timeline__point { /* Titik pada timeline (menggantikan c-timeline__dot) */
+.c-timeline__point { /* Titik pada timeline */
     width: 18px;
     height: 18px;
     background-color: #E53E99; /* brand-pink-accent */
@@ -349,11 +342,8 @@ body {
     transform: translateX(-50%);
 }
 .c-timeline__content {
-    /* background-color: #FFFFFF; (sudah dari bg-brand-white section) */
     padding: 10px; /* Padding di dalam konten */
     border-radius: 6px;
-    /* box-shadow: 0 1px 3px rgba(0,0,0,0.05); (opsional, jika ingin card effect) */
-    /* border: 1px solid #E5E7EB; (opsional) */
 }
 .c-timeline__item-title {
     font-size: 1.25rem;
@@ -374,7 +364,7 @@ body {
 }
 
 /* --- My Skills Section --- */
-.c-skills__layout { /* Menggantikan c-skills__container */
+.c-skills__layout {
     display: grid;
     gap: 2rem;
 }
@@ -718,9 +708,10 @@ body {
     border-top: 1px solid #E5E7EB;
 }
 
-/* --- Mobile Responsiveness (Tambahan) --- */
+/* --- Mobile Responsiveness (Tambahan & Penyesuaian) --- */
 @media (max-width: 767px) {
     .c-navbar__desktop-menu { display: none; }
+    .c-navbar__menu { display: none; } /* Double check if this is redundant with the above */
     .c-navbar__mobile-toggle { display: block; }
 
     .c-hero__supertitle { font-size: 1.5rem; }
@@ -734,7 +725,7 @@ body {
         transform: translateX(0);
     }
     .c-timeline__item,
-    .c-timeline__item--right {
+    .c-timeline__item--right { /* Ensure --right variant also gets mobile styling */
         width: 100%;
         float: none;
         clear: both;
@@ -746,10 +737,10 @@ body {
         margin-bottom: 30px;
     }
     .c-timeline__point { /* Titik di mobile */
-        left: 10px;
+        left: 10px; /* Adjusted to align with the new timeline line */
         right: auto;
         transform: none;
-        top: 0px; /* Posisikan dot di awal konten item */
+        top: 0px; /* Posisikan dot di awal konten item, atau sedikit di atasnya */
     }
     .c-timeline__content {
         margin-left: 0;
