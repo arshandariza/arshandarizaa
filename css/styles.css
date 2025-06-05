@@ -1,126 +1,743 @@
-/* css/styles.css (Versi untuk pengguna Tailwind CDN - TANPA @apply) */
+/* === css/styles.css === */
 
+/* --- Global & Reset Dasar --- */
 body {
-  font-family: 'Poppins', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: 'Poppins', sans-serif;
+    background-color: #FEF6F6; /* brand-pink-light */
+    color: #4B5563; /* brand-gray-med */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 16px; /* Base font size */
 }
 
-/* Navigasi */
-.nav-link { /* ... (sama seperti sebelumnya) ... */ }
-.mobile-nav-link { /* ... (sama seperti sebelumnya) ... */ }
-
-/* Tombol Hero */
-.hero-button { /* ... (sama seperti sebelumnya) ... */ }
-
-/* Judul Section */
-.section-title { /* ... (sama seperti sebelumnya) ... */ }
-
-/* Timeline Experience */
-.timeline-line { /* ... (sama seperti sebelumnya) ... */ }
-.timeline-item { /* ... (sama seperti sebelumnya) ... */ }
-.timeline-content-base { /* ... (sama seperti sebelumnya) ... */ }
-.timeline-content-left { /* ... (sama seperti sebelumnya) ... */ }
-.timeline-title { /* ... (sama seperti sebelumnya) ... */ }
-.timeline-date { /* ... (sama seperti sebelumnya) ... */ }
-.timeline-description { /* ... (sama seperti sebelumnya) ... */ }
-.timeline-content-right { /* ... (sama seperti sebelumnya) ... */ }
-.timeline-dot-container-base { /* ... (sama seperti sebelumnya) ... */ }
-.timeline-dot-container-left { /* ... (sama seperti sebelumnya) ... */ }
-.timeline-dot-container-right { /* ... (sama seperti sebelumnya) ... */ }
-.timeline-dot { /* ... (sama seperti sebelumnya) ... */ }
-.timeline-content-mobile { /* ... (sama seperti sebelumnya) ... */ }
-.timeline-content-mobile::before { /* ... (sama seperti sebelumnya) ... */ }
-.timeline-item .timeline-content-left,
-.timeline-item .timeline-content-right,
-.timeline-item .timeline-content-mobile:not(:empty) { /* ... (sama seperti sebelumnya) ... */ }
-.timeline-item .timeline-content-mobile:empty { /* ... (sama seperti sebelumnya) ... */ }
-.timeline-item .timeline-content-mobile:empty::before { /* ... (sama seperti sebelumnya) ... */ }
-
-
-/* Skill Card */
-.skill-card {
-  background-color: white;
-  padding: 1.5rem; /* p-6 */
-  border-radius: 0.75rem; /* rounded-xl */
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03); /* shadow-lg tipis */
-  border: 1px solid #FCE7F3; /* border-pink-100 */
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-.skill-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); /* shadow-xl */
-}
-.skill-title {
-  font-size: 1.25rem; /* text-xl */
-  font-weight: 600; /* semibold */
-  color: #1F2937; /* brand-gray-dark */
-  margin-bottom: 0.75rem; /* mb-3 */
-}
-.skill-description {
-  font-size: 0.9rem; /* sedikit lebih kecil dari base */
-  line-height: 1.6;
-  color: #4B5563; /* brand-gray-med */
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
-/* Styling untuk Project Card */
-.project-card { /* ... (sama seperti sebelumnya) ... */ }
-.project-image-container { /* ... (sama seperti sebelumnya) ... */ }
-.project-image { /* ... (sama seperti sebelumnya) ... */ }
-.project-content { /* ... (sama seperti sebelumnya) ... */ }
-.project-title { /* ... (sama seperti sebelumnya) ... */ }
-.project-description { /* ... (sama seperti sebelumnya) ... */ }
-
-/* Styling untuk Achievement Card */
-.achievement-card { /* ... (sama seperti sebelumnya, sesuaikan background jika perlu) ... */ }
-.achievement-images-container { /* ... (sama seperti sebelumnya) ... */ }
-.achievement-image { /* ... (sama seperti sebelumnya) ... */ }
-.achievement-content { /* ... (sama seperti sebelumnya) ... */ }
-.achievement-title { /* ... (sama seperti sebelumnya) ... */ }
-.achievement-credential { /* ... (sama seperti sebelumnya) ... */ }
-.achievement-description { /* ... (sama seperti sebelumnya) ... */ }
-
-
-/* Contact Section */
-.contact-email-link {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem; /* rounded-lg */
-  background-color: rgba(255, 255, 255, 0.1);
-  color: white;
-  font-weight: 500; /* medium */
-  transition: background-color 0.3s ease;
-  text-decoration: underline;
+/* --- Helper: Container (jika tidak pakai .container dari Tailwind di HTML) --- */
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
 }
-.contact-email-link:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-.contact-copy-button {
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem; /* rounded-lg */
-  background-color: #FEF6F6; /* brand-pink-light */
-  color: #1F2937; /* brand-gray-dark */
-  font-weight: 500; /* medium */
-  transition: background-color 0.3s ease;
-  border: 1px solid transparent;
-}
-.contact-copy-button:hover {
-  background-color: #FBCFE8; /* brand-pink-med */
+@media (min-width: 768px) {
+    .container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 }
 
+/* --- Komponen Tombol --- */
+.c-button {
+    display: inline-block;
+    font-weight: 600;
+    padding: 10px 28px; /* Sedikit disesuaikan */
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    border: 1px solid transparent;
+}
+.c-button:hover {
+    transform: translateY(-2px);
+}
+.c-button--primary {
+    background-color: #303030; /* brand-button-bg (sesuai contoh desain tombol gelap) */
+    color: #FFFFFF;
+    font-size: 1rem; /* Disesuaikan agar tidak terlalu besar */
+}
+.c-button--primary:hover {
+    background-color: #1A1A1A; /* brand-button-hover */
+}
+.c-button--copy {
+    background-color: #FFFFFF;
+    color: #1F2937;
+    font-size: 0.875rem;
+    padding: 8px 16px;
+    text-transform: uppercase;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px; /* Disesuaikan dengan desain tombol copy */
+}
+.c-button--copy:hover {
+    background-color: #F3F4F6;
+}
 
-/* Footer Links */
-.footer-link {
-  color: #6B7280; /* gray-500 atau sesuaikan */
-  text-decoration: none;
-  transition: color 0.3s ease;
+/* --- Navbar --- */
+.c-navbar {
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Bayangan lebih halus */
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
-.footer-link:hover {
-  color: #F472B6; /* brand-pink-dark */
-  text-decoration: underline;
+.c-navbar__container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.75rem 1.25rem; /* py-3 px-5 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 68px; /* Tinggi navbar konsisten */
 }
-/* Untuk ikon SVG di footer agar warnanya ikut link hover jika SVGnya di set fill="currentColor" */
-.footer-link svg {
-    fill: currentColor; 
+.c-navbar__logo {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1F2937;
+    text-decoration: none;
+}
+.c-navbar__mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: #1F2937;
+}
+.c-navbar__mobile-toggle .icon { /* Ukuran ikon hamburger */
+    width: 24px;
+    height: 24px;
+}
+.c-navbar__desktop-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.c-navbar__desktop-menu li + li {
+    margin-left: 1.75rem; /* space-x-7 (kurang lebih) */
+}
+.c-navbar__link {
+    font-size: 0.9rem; /* Ukuran font link navbar */
+    color: #4B5563;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 0.5rem 0.25rem; /* Padding agar area klik lebih baik */
+}
+.c-navbar__link:hover {
+    color: #E53E99; /* brand-pink-accent */
+}
+.c-navbar__mobile-menu {
+    display: none;
+    background-color: #FFFFFF;
+    position: absolute;
+    top: 68px; /* Tepat di bawah navbar */
+    left: 0;
+    right: 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-top: 1px solid #E5E7EB;
+}
+.c-navbar__mobile-menu.is-open {
+    display: block;
+}
+.c-navbar__mobile-list {
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 0;
+}
+.c-navbar__mobile-link {
+    display: block;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: #4B5563;
+    transition: background-color 0.3s ease;
+}
+.c-navbar__mobile-link:hover {
+    background-color: #FFF1F2;
+}
+
+/* --- Hero Section --- */
+.c-hero {
+    position: relative;
+    min-height: calc(100vh - 68px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 1.25rem; /* Padding dikurangi sedikit */
+    overflow: hidden;
+    background-color: #FEF6F6;
+}
+.c-hero__bg-image-container {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    display: flex;
+    align-items: center; /* Vertically center */
+    justify-content: center; /* Horizontally center */
+    pointer-events: none;
+}
+.c-hero__bg-image {
+    width: 100%;
+    max-width: 900px; /* Ukuran gambar header sedikit lebih besar */
+    transform: scale(1.25); /* Perbesar gambar sedikit lagi dari sebelumnya */
+    height: auto;
+    object-fit: contain;
+    opacity: 0.5; /* Sedikit lebih transparan */
+}
+.c-hero__content {
+    position: relative;
+    z-index: 1;
+}
+.c-hero__supertitle {
+    font-size: 1.875rem; /* text-3xl (lebih kecil dari sebelumnya) */
+    font-weight: 700;
+    color: #A0AEC0; /* brand-hero-supertitle */
+    margin-bottom: 0;
+    line-height: 1; /* Rapatkan ke judul utama */
+}
+.c-hero__title {
+    font-size: 3.75rem; /* text-6xl (untuk layar besar) */
+    font-weight: 800;
+    color: #1F2937;
+    margin-top: 0.25rem; /* mt-1 */
+    line-height: 1.1;
+}
+.c-hero__subtitle {
+    margin-top: 1.25rem; /* mt-5 */
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: #4B5563;
+}
+.c-hero__cta {
+    margin-top: 2rem; /* mt-8 */
+}
+
+/* --- Section Styling Global --- */
+.c-section {
+    padding: 3.5rem 0; /* py-14 (sedikit disesuaikan) */
+}
+@media (min-width: 768px) {
+    .c-section { padding: 4.5rem 0; } /* py-18 */
+}
+.c-section__container {
+    width: 100%;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+.c-section__title {
+    font-size: 2rem; /* text-3xl (disesuaikan) */
+    font-weight: 700;
+    text-align: center;
+    color: #1F2937;
+    margin-bottom: 2.5rem; /* mb-10 */
+}
+@media (min-width: 640px) {
+    .c-section__title { font-size: 2.25rem; } /* text-4xl */
+}
+.c-section__title--left-align {
+    text-align: left;
+    margin-bottom: 0.5rem;
+}
+.c-section__cta {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+/* --- Experience Section (Timeline) - Perbaikan Alignment --- */
+.c-timeline {
+    position: relative;
+    max-width: 800px; /* Kontainer timeline lebih ramping */
+    margin: 2rem auto;
+    padding: 0; /* Hapus padding default agar bisa kontrol dari item */
+}
+.c-timeline::before { /* Garis tengah utama */
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 10px; /* Mulai sedikit di bawah awal section */
+    bottom: 10px; /* Berakhir sedikit di atas akhir section */
+    width: 3px;
+    background-color: #FBCFE8; /* brand-pink-med */
+    transform: translateX(-50%);
+    z-index: 0;
+}
+.c-timeline__item {
+    padding: 20px 0; /* Padding atas bawah untuk jarak antar item */
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+    z-index: 1;
+}
+.c-timeline__item:nth-child(odd) { /* Item di kiri */
+    padding-right: 50px; /* Jarak dari garis tengah ke konten */
+    text-align: right;
+    float: left;
+    clear:both;
+}
+.c-timeline__item:nth-child(even) { /* Item di kanan */
+    padding-left: 50px; /* Jarak dari garis tengah ke konten */
+    text-align: left;
+    float: right;
+    clear:both;
+}
+/* Clear floats */
+.c-timeline::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.c-timeline__point { /* Titik pada timeline (menggantikan c-timeline__dot) */
+    width: 18px;
+    height: 18px;
+    background-color: #E53E99; /* brand-pink-accent */
+    border: 3px solid #FEF6F6; /* bg-brand-pink-light */
+    border-radius: 50%;
+    position: absolute;
+    top: 20px; /* Posisi vertikal dot, sesuaikan dengan tinggi teks */
+    z-index: 2;
+}
+.c-timeline__item:nth-child(odd) .c-timeline__point {
+    right: -9px; /* Setengah lebar dot, agar pas di garis tengah */
+    transform: translateX(50%);
+}
+.c-timeline__item:nth-child(even) .c-timeline__point {
+    left: -9px;
+    transform: translateX(-50%);
+}
+.c-timeline__content {
+    /* background-color: #FFFFFF; (sudah dari bg-brand-white section) */
+    padding: 10px; /* Padding di dalam konten */
+    border-radius: 6px;
+    /* box-shadow: 0 1px 3px rgba(0,0,0,0.05); (opsional, jika ingin card effect) */
+    /* border: 1px solid #E5E7EB; (opsional) */
+}
+.c-timeline__item-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 0.25rem;
+}
+.c-timeline__item-date {
+    font-size: 0.875rem;
+    color: #E53E99; /* brand-pink-accent */
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+.c-timeline__item-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #4B5563; /* brand-gray-med */
+}
+
+/* --- My Skills Section --- */
+.c-skills__layout { /* Menggantikan c-skills__container */
+    display: grid;
+    gap: 2rem;
+}
+@media (min-width: 768px) {
+    .c-skills__layout {
+        grid-template-columns: 1fr 1.5fr; /* Kolom kiri lebih kecil */
+        gap: 3rem;
+        align-items: flex-start;
+    }
+}
+.c-skills__title-column .c-section__title--left-align {
+    margin-bottom: 0.5rem;
+}
+.c-skills__subtitle {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4B5563;
+    text-align: left;
+    margin-bottom: 0;
+}
+.c-skills__accordion-column {
+    width: 100%;
+}
+.c-accordion-item {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03); /* Shadow lebih halus */
+}
+.c-accordion-button {
+    background: none;
+    border: none;
+    width: 100%;
+    padding: 1rem 1.25rem; /* py-4 px-5 */
+    text-align: left;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1F2937;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border-radius: 8px; /* Agar hover tidak keluar dari border */
+}
+.c-accordion-button:hover {
+    background-color: #F9FAFB;
+}
+.c-accordion-button[aria-expanded="true"] {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.c-accordion-icon {
+    font-size: 1.25rem;
+    color: #4B5563;
+    transition: transform 0.3s ease;
+    font-weight: bold;
+}
+.c-accordion-button[aria-expanded="true"] .c-accordion-icon {
+    transform: rotate(45deg);
+}
+.c-accordion-content {
+    padding: 0 1.25rem 1.25rem 1.25rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #4B5563;
+    display: none;
+    border-top: 1px solid #E5E7EB;
+}
+.c-accordion-content.is-open {
+    display: block;
+}
+
+/* --- Project & Achievement Cards --- */
+.c-card { /* Card umum untuk Project dan Achievement */
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08); /* Shadow lebih terlihat */
+    overflow: hidden;
+    border: 1px solid #F3F4F6;
+    margin-bottom: 2.5rem; /* Jarak antar card jika ada lebih dari satu per section */
+}
+.c-project-card {
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width: 768px) {
+    .c-project-card {
+        flex-direction: row;
+        align-items: stretch; /* Agar tinggi image area dan content area sama */
+    }
+}
+.c-project-card__image-area {
+    flex-shrink: 0;
+    background-color: #F9FAFB;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media (min-width: 768px) {
+    .c-project-card__image-area {
+        width: 40%;
+        padding: 2rem;
+    }
+}
+.c-project-card__image {
+    display: block;
+    width: 100%;
+    max-width: 350px; /* Batas max gambar proyek */
+    height: auto;
+    object-fit: contain;
+    border-radius: 6px; /* Sedikit lengkungan jika SVG punya background */
+}
+.c-project-card__content-area {
+    padding: 1.5rem;
+    flex-grow: 1; /* Agar mengambil sisa ruang */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Pusatkan teks vertikal jika perlu */
+}
+@media (min-width: 768px) {
+    .c-project-card__content-area {
+        padding: 2rem;
+    }
+}
+.c-project-card__title {
+    font-size: 1.375rem; /* Sedikit lebih besar */
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 0.75rem;
+}
+.c-project-card__description {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: #4B5563;
+}
+
+.c-achievement-card {
+    padding: 1.5rem;
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .c-achievement-card { padding: 2rem; }
+}
+.c-achievement-card__images-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Agar semua gambar punya tinggi yang sama jika memungkinkan */
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+.c-achievement-card__image {
+    flex: 1 1 150px; /* Gambar bisa grow/shrink, basis 150px */
+    max-width: 180px;
+    height: auto; /* Biarkan tinggi otomatis atau set tinggi tetap */
+    min-height: 200px; /* Contoh tinggi minimal agar card gambar rata */
+    border-radius: 8px;
+    object-fit: contain; /* Atau cover jika rasio aspek beda */
+    background-color: #F9FAFB;
+    padding: 0.5rem;
+    border: 1px solid #E5E7EB;
+    display: flex; /* Untuk align item di tengah jika SVG kecil */
+    align-items: center;
+    justify-content: center;
+}
+.c-achievement-card__image img { /* Jika SVG ada di dalam elemen ini */
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.c-achievement-card__content {}
+.c-achievement-card__title {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 0.5rem;
+}
+.c-achievement-card__credential {
+    font-size: 0.875rem;
+    color: #6B7280;
+    margin-bottom: 1rem;
+}
+.c-achievement-card__description {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    max-width: 48rem;
+    margin: 0 auto;
+    color: #4B5563;
+}
+
+/* --- Contact CTA Section --- */
+.c-contact-cta {
+    background-color: #1F2937; /* brand-contact-bg (sesuai desain) */
+    color: #FFFFFF;
+    padding: 3rem 1.25rem;
+}
+.c-contact-cta__container {
+    max-width: 650px; /* Lebar container sesuai contoh */
+    margin: 0 auto;
+    background-color: #2D3748; /* Inner box lebih gelap sedikit */
+    padding: 2.5rem;
+    border-radius: 12px;
+    text-align: center;
+}
+.c-contact-cta__header {
+    margin-bottom: 1.5rem; /* Jarak lebih rapat */
+}
+.c-contact-cta__title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.c-contact-cta__subtitle {
+    font-size: 1.125rem;
+    color: #E2E8F0; /* brand-contact-text */
+    font-weight: 500;
+    margin-top: 0.25rem;
+}
+.c-contact-cta__email-group {
+    background-color: #1F2937; /* Background baris email lebih gelap */
+    padding: 0.75rem 1rem; /* Padding lebih kecil */
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+@media (min-width: 500px) {
+    .c-contact-cta__email-group {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+.c-contact-cta__email-link {
+    display: inline-flex;
+    align-items: center;
+    color: #FFFFFF;
+    font-weight: 500;
+    text-decoration: underline;
+    font-size: 1rem; /* text-base */
+}
+.c-contact-cta__email-icon {
+    width: 1.125rem; /* w-4.5 (kurang lebih) */
+    height: 1.125rem;
+    margin-right: 0.5rem;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+.c-contact-cta__feedback {
+    font-size: 0.875rem;
+    color: #F472B6;
+    min-height: 1.25rem;
+    margin-top: 0.5rem;
+}
+.c-contact-cta__footer-info {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #4B5563; /* Garis pemisah */
+}
+.c-contact-cta__footer-name {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+.c-contact-cta__footer-desc {
+    font-size: 0.875rem;
+    color: #D1D5DB;
+    max-width: 36rem;
+    margin: 0 auto 1rem auto;
+    line-height: 1.6;
+}
+
+/* --- Footer --- */
+.c-footer {
+    background-color: #FFFFFF;
+    padding: 2.5rem 0;
+    color: #4B5563;
+}
+.c-footer__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+.c-footer__grid {
+    display: grid;
+    gap: 2rem;
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .c-footer__grid {
+        grid-template-columns: repeat(3, 1fr);
+        text-align: left;
+    }
+}
+.c-footer__column {}
+.c-footer__title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 1rem;
+}
+.c-footer__description {
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+.c-footer__links, .c-footer__contact-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.c-footer__links li + li, .c-footer__contact-links li + li {
+    margin-top: 0.5rem;
+}
+.c-footer__link, .c-footer__contact-link {
+    font-size: 0.875rem;
+    text-decoration: none;
+    color: #4B5563;
+    transition: color 0.3s ease;
+}
+.c-footer__link:hover, .c-footer__contact-link:hover {
+    color: #F472B6;
+    text-decoration: underline;
+}
+.c-footer__contact-link {
+    display: inline-flex;
+    align-items: center;
+}
+.c-footer__contact-icon {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+}
+.c-footer__copyright {
+    text-align: center;
+    font-size: 0.875rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #E5E7EB;
+}
+
+/* --- Mobile Responsiveness (Tambahan) --- */
+@media (max-width: 767px) {
+    .c-navbar__desktop-menu { display: none; }
+    .c-navbar__mobile-toggle { display: block; }
+
+    .c-hero__supertitle { font-size: 1.5rem; }
+    .c-hero__title { font-size: 2.5rem; }
+    .c-hero__subtitle { font-size: 1rem; }
+    .c-hero__cta { font-size: 1rem; padding: 10px 20px; }
+
+    .c-timeline { padding: 1rem 0; }
+    .c-timeline::before {
+        left: 20px;
+        transform: translateX(0);
+    }
+    .c-timeline__item,
+    .c-timeline__item--right {
+        width: 100%;
+        float: none;
+        clear: both;
+        padding-left: 45px; /* Ruang untuk dot + sedikit jarak */
+        padding-right: 10px;
+        margin-left: 0;
+        margin-right: 0;
+        text-align: left !important;
+        margin-bottom: 30px;
+    }
+    .c-timeline__point { /* Titik di mobile */
+        left: 10px;
+        right: auto;
+        transform: none;
+        top: 0px; /* Posisikan dot di awal konten item */
+    }
+    .c-timeline__content {
+        margin-left: 0;
+        padding: 15px;
+    }
+    .c-timeline__item-title { font-size: 1.125rem; }
+
+    .c-skills__layout { grid-template-columns: 1fr; }
+    .c-section__title--left-align { text-align: center; margin-bottom: 2rem; }
+    .c-skills__subtitle { text-align: center; margin-bottom: 2rem; }
+
+    .c-project-card { flex-direction: column; }
+    .c-project-card__image-area { width: 100%; padding: 1rem; }
+    .c-project-card__content-area { padding: 1rem; }
+
+    .c-achievement-card__images-container { flex-direction: column; gap: 0.5rem; }
+    .c-achievement-card__image { max-width: 180px; }
+
+    .c-contact-cta__container { padding: 1.5rem; }
+    .c-contact-cta__title { font-size: 1.5rem; }
+    .c-contact-cta__subtitle { font-size: 1rem; }
+    .c-contact-cta__email-group { flex-direction: column; }
+    .c-contact-cta__footer-info { text-align: center; }
+
+    .c-footer__grid { grid-template-columns: 1fr; text-align: center; }
+    .c-footer__title { margin-top: 1rem; }
+    .c-footer__column:first-child .c-footer__title { margin-top: 0; }
 }
