@@ -69,25 +69,28 @@ body {
 }
 
 /* --- Navbar --- */
+/* === css/styles.css (Perbaikan untuk Navbar) === */
+
+/* --- Navbar --- */
 .c-navbar {
-  background-color: #FAE8ED; /* Revisi: Warna navbar sesuai permintaan */
-  /* box-shadow: none; /* Revisi: Shadow dihilangkan, baris ini bisa dihapus atau dibiarkan */
+  background-color: #FAE8ED; /* Revisi: Warna navbar diubah */
+  /* box-shadow: none; /* Revisi: Shadow dihilangkan. Baris ini bisa dihapus atau dikosongkan. */
   position: sticky;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000; /* Pastikan navbar di atas konten lain */
+  z-index: 1000;
 }
 
 .c-navbar__container {
-  max-width: 1200px; /* Lebar maksimum konten navbar */
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding: 0 20px; /* Padding horizontal untuk container navbar */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 72px; /* Tinggi navbar, bisa disesuaikan */
+  height: 72px; /* Tinggi navbar konsisten, bisa disesuaikan */
 }
 
 .c-navbar__logo {
@@ -98,7 +101,7 @@ body {
 }
 
 .c-navbar__mobile-toggle {
-  display: none; /* Defaultnya disembunyikan untuk desktop */
+  display: none; /* Defaultnya disembunyikan untuk desktop, tampil di mobile via media query */
   background: none;
   border: none;
   cursor: pointer;
@@ -110,32 +113,24 @@ body {
     height: 24px;
 }
 
-.c-navbar__menu { /* Wrapper untuk menu desktop */
-  display: none; /* Sembunyikan di mobile secara default */
-}
-@media (min-width: 768px) { /* md breakpoint (misalnya 768px) */
-  .c-navbar__menu {
-    display: flex; /* Tampilkan menu desktop di layar medium ke atas */
-  }
-  .c-navbar__mobile-toggle {
-    display: none; /* Sembunyikan tombol hamburger di desktop */
-  }
+.c-navbar__menu { /* Ini adalah tag <nav> yang membungkus <ul> untuk desktop */
+  display: none; /* Defaultnya disembunyikan untuk mobile */
 }
 
-.c-navbar__list { /* Untuk <ul> di menu desktop */
-  display: flex; /* Membuat <li> berjejer horizontal */
+.c-navbar__list { /* Ini adalah tag <ul> */
+  display: flex; /* Membuat <li> (item menu) berjejer horizontal */
   list-style: none;
   margin: 0;
   padding: 0;
-  align-items: center; /* Sejajarkan item secara vertikal */
+  align-items: center; /* Menjaga item menu sejajar secara vertikal */
 }
 
 .c-navbar__list li + li { /* Memberi jarak antar item menu desktop */
-  margin-left: 1.75rem; /* Sesuaikan jaraknya */
+  margin-left: 1.75rem; /* Sesuaikan jaraknya jika perlu */
 }
 
 .c-navbar__link { /* Untuk setiap <a> di menu desktop */
-  font-size: 0.9rem; /* Ukuran font link navbar, bisa disesuaikan */
+  font-size: 0.9rem; /* Ukuran font link navbar */
   color: #4B5563; /* brand-gray-med (warna teks link) */
   text-decoration: none;
   transition: color 0.3s ease;
@@ -176,10 +171,13 @@ body {
   background-color: #FFF1F2; /* Warna hover background link mobile */
 }
 
-/* --- Media Query untuk menampilkan Tombol Mobile Toggle --- */
-@media (max-width: 767px) { /* Di bawah md breakpoint */
-  .c-navbar__desktop-menu {
+/* --- Media Query untuk Responsivitas Navbar --- */
+@media (max-width: 767px) { /* Di bawah md breakpoint (misalnya 768px) */
+  .c-navbar__desktop-menu { /* Menggunakan .c-navbar__menu untuk nav desktop */
     display: none; /* Sembunyikan menu desktop */
+  }
+  .c-navbar__menu { /* Mengacu pada <nav id="desktop-menu"> */
+    display: none;
   }
   .c-navbar__mobile-toggle {
     display: block; /* Tampilkan tombol hamburger */
@@ -187,6 +185,15 @@ body {
   .c-navbar__container {
     padding: 0 1rem; /* Padding container navbar di mobile lebih kecil */
   }
+}
+
+@media (min-width: 768px) { /* md breakpoint ke atas */
+    .c-navbar__menu { /* Mengacu pada <nav id="desktop-menu"> */
+        display: flex; /* Pastikan menu desktop tampil */
+    }
+    .c-navbar__mobile-toggle {
+        display: none; /* Sembunyikan tombol hamburger di desktop */
+    }
 }
 
 /* --- Hero Section --- */
