@@ -16,11 +16,14 @@
               colors: {
                 'brand-pink-light': '#FEF6F6',
                 'brand-pink-med': '#FBCFE8',
-                'brand-pink-dark': '#F472B6',
-                'brand-gray-dark': '#1F2937',
-                'brand-gray-med': '#4B5563',
-                'brand-gray-light': '#D1D5DB',
+                'brand-pink-dark': '#F472B6', // Lebih cerah dari desain, bisa disesuaikan
+                'brand-gray-dark': '#1F2937', // Untuk teks utama, tombol gelap
+                'brand-gray-med': '#4B5563',  // Untuk teks sekunder
+                'brand-gray-light': '#D1D5DB',// Untuk border tipis
                 'brand-white': '#FFFFFF',
+                'brand-button-bg': '#2D3748', // Warna tombol "Let's Work Together!" sesuai desain (gelap)
+                'brand-button-hover': '#1A202C', // Hover tombol
+                'brand-title-bg': '#DADADA', // Warna "PORTOFOLIO" di belakang judul utama (abu-abu muda)
               }
             }
           }
@@ -35,242 +38,242 @@
 </head>
 <body class="font-poppins bg-brand-pink-light text-brand-gray-med">
 
-    <header class="bg-brand-white shadow-md sticky top-0 z-50">
-        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <a href="#" id="nav-logo" class="text-xl font-bold text-brand-gray-dark">Shanda’s Portofolio</a>
+    <header class="c-navbar">
+        <nav class="c-navbar__container">
+            <a href="#" class="c-navbar__logo">Shanda’s Portofolio</a>
             <div class="md:hidden">
-                <button id="mobile-menu-button" aria-label="Buka Menu" class="text-brand-gray-dark focus:outline-none">
+                <button id="mobile-menu-button" aria-label="Buka Menu" class="c-navbar__mobile-button">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
             </div>
-            <ul id="desktop-menu" class="hidden md:flex space-x-6 lg:space-x-8">
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#skills" class="nav-link">Skill</a></li>
-                <li><a href="#projects" class="nav-link">Project</a></li>
-                <li><a href="#achievements" class="nav-link">Achievement</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+            <ul id="desktop-menu" class="c-navbar__desktop-menu">
+                <li><a href="#experience" class="c-navbar__link">Experience</a></li>
+                <li><a href="#skills" class="c-navbar__link">Skill</a></li>
+                <li><a href="#projects" class="c-navbar__link">Project</a></li>
+                <li><a href="#achievements" class="c-navbar__link">Achievement</a></li>
+                <li><a href="#contact" class="c-navbar__link">Contact</a></li>
             </ul>
         </nav>
-        <div id="mobile-menu" class="md:hidden hidden bg-brand-white absolute w-full shadow-lg">
+        <div id="mobile-menu" class="c-navbar__mobile-menu-dropdown">
             <ul class="flex flex-col items-center py-2">
-                <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
-                <li><a href="#skills" class="mobile-nav-link">Skill</a></li>
-                <li><a href="#projects" class="mobile-nav-link">Project</a></li>
-                <li><a href="#achievements" class="mobile-nav-link">Achievement</a></li>
-                <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+                <li><a href="#experience" class="c-navbar__mobile-link">Experience</a></li>
+                <li><a href="#skills" class="c-navbar__mobile-link">Skill</a></li>
+                <li><a href="#projects" class="c-navbar__mobile-link">Project</a></li>
+                <li><a href="#achievements" class="c-navbar__mobile-link">Achievement</a></li>
+                <li><a href="#contact" class="c-navbar__mobile-link">Contact</a></li>
             </ul>
         </div>
     </header>
 
     <main>
-        <section id="hero" class="relative min-h-[calc(100vh-68px)] flex flex-col items-center justify-center text-center py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-            <div class="absolute inset-0 z-0 opacity-70 flex items-center justify-center pointer-events-none">
-                 <img src="images/header.svg" alt="Header Decorative Background" class="w-full max-w-screen-lg h-auto object-contain">
+        <section id="hero" class="c-hero">
+            <div class="c-hero__bg-image-container">
+                 <img src="images/header.svg" alt="Decorative Background" class="c-hero__bg-image">
             </div>
-            <div class="relative z-10">
-                <h2 class="text-5xl md:text-6xl font-bold text-brand-gray-dark/40">PORTOFOLIO</h2>
-                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-brand-gray-dark mt-2 sm:mt-4">
-                    ARSHANDA RIZA PUTRI
-                </h1>
-                <p class="mt-4 md:mt-6 max-w-2xl mx-auto text-lg sm:text-xl">
+            <div class="c-hero__content">
+                <h2 class="c-hero__supertitle">PORTOFOLIO</h2>
+                <h1 class="c-hero__title">ARSHANDA RIZA PUTRI</h1>
+                <p class="c-hero__subtitle">
                     Undergraduate Informatics Engineer | Interest in Website Design | Front-End Experience | Content Writer | Data Analyst
                 </p>
-                <a href="#contact" class="hero-button mt-8 md:mt-10">
+                <a href="#contact" class="c-button c-button--primary c-hero__cta">
                     Let’s Work Together!
                 </a>
             </div>
         </section>
 
-        <section id="experience" class="py-16 sm:py-20 bg-brand-white">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="section-title">EXPERIENCE</h2>
-                <div class="relative mt-12">
-                    <div class="timeline-line"></div>
-                    <div class="timeline-item">
-                        <div class="timeline-content-left">
-                            <h3 class="timeline-title">Community Writer</h3>
-                            <p class="timeline-date">June 2022 - Desember 2023</p>
+        <section id="experience" class="c-section bg-brand-white">
+            <div class="c-section__container">
+                <h2 class="c-section__title">EXPERIENCE</h2>
+                <div class="c-timeline">
+                    <div class="c-timeline__line"></div>
+                    <div class="c-timeline__item">
+                        <div class="c-timeline__content c-timeline__content--left">
+                            <h3 class="c-timeline__title">Community Writer</h3>
+                            <p class="c-timeline__date">June 2022 - Desember 2023</p>
                         </div>
-                        <div class="timeline-dot-container-left"><div class="timeline-dot"></div></div>
-                        <div class="timeline-content-mobile"></div>
+                        <div class="c-timeline__dot-container c-timeline__dot-container--left"><div class="c-timeline__dot"></div></div>
+                        <div class="c-timeline__content-mobile"></div>
                     </div>
-                    <div class="timeline-item md:flex-row-reverse">
-                        <div class="timeline-content-right md:text-left">
-                            <h3 class="timeline-title">Article Writer</h3>
-                            <p class="timeline-description">Responsibilities include writing articles in diverse fields (technology, health, finance, lifestyle), conducting in-depth research, optimizing content for search engines (SEO), and performing thorough editing and proofreading.</p>
+                    <div class="c-timeline__item c-timeline__item--right">
+                        <div class="c-timeline__content c-timeline__content--right">
+                            <h3 class="c-timeline__title">Article Writer</h3>
+                            <p class="c-timeline__description">Responsibilities include writing articles in diverse fields (technology, health, finance, lifestyle), conducting in-depth research, optimizing content for search engines (SEO), and performing thorough editing and proofreading.</p>
                         </div>
-                        <div class="timeline-dot-container-right"><div class="timeline-dot"></div></div>
-                         <div class="timeline-content-mobile"><p class="text-sm">Responsibilities include writing articles...</p></div>
+                        <div class="c-timeline__dot-container c-timeline__dot-container--right"><div class="c-timeline__dot"></div></div>
+                         <div class="c-timeline__content-mobile"><p class="text-sm">Responsibilities include writing articles...</p></div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content-left">
-                            <h3 class="timeline-title">PT Trakindo Utama</h3>
-                            <p class="timeline-date">June 2022 - Desember 2023</p>
+                    <div class="c-timeline__item">
+                        <div class="c-timeline__content c-timeline__content--left">
+                            <h3 class="c-timeline__title">PT Trakindo Utama</h3>
+                            <p class="c-timeline__date">June 2022 - Desember 2023</p>
                         </div>
-                        <div class="timeline-dot-container-left"><div class="timeline-dot"></div></div>
-                        <div class="timeline-content-mobile"></div>
+                        <div class="c-timeline__dot-container c-timeline__dot-container--left"><div class="c-timeline__dot"></div></div>
+                        <div class="c-timeline__content-mobile"></div>
                     </div>
-                    <div class="timeline-item md:flex-row-reverse">
-                        <div class="timeline-content-right md:text-left">
-                            <h3 class="timeline-title">On-The Job Training</h3>
-                            <p class="timeline-description">Handled daily data operations (entry, processing, analysis) with CMS and SAP for accuracy. Provided insightful reports, managed administrative documents (e.g., invoices), and ensured consistent, accurate data across company systems.</p>
+                    <div class="c-timeline__item c-timeline__item--right">
+                        <div class="c-timeline__content c-timeline__content--right">
+                            <h3 class="c-timeline__title">On-The Job Training</h3>
+                            <p class="c-timeline__description">Handled daily data operations (entry, processing, analysis) with CMS and SAP for accuracy. Provided insightful reports, managed administrative documents (e.g., invoices), and ensured consistent, accurate data across company systems.</p>
                         </div>
-                        <div class="timeline-dot-container-right"><div class="timeline-dot"></div></div>
-                         <div class="timeline-content-mobile"><p class="text-sm">Handled daily data operations...</p></div>
+                        <div class="c-timeline__dot-container c-timeline__dot-container--right"><div class="c-timeline__dot"></div></div>
+                         <div class="c-timeline__content-mobile"><p class="text-sm">Handled daily data operations...</p></div>
                     </div>
-                     <div class="timeline-item">
-                        <div class="timeline-content-left">
-                            <h3 class="timeline-title">Coming Soon :)</h3>
+                    <div class="c-timeline__item">
+                        <div class="c-timeline__content c-timeline__content--left">
+                            <h3 class="c-timeline__title">Coming Soon :)</h3>
                         </div>
-                        <div class="timeline-dot-container-left"><div class="timeline-dot"></div></div>
-                        <div class="timeline-content-mobile"></div>
+                        <div class="c-timeline__dot-container c-timeline__dot-container--left"><div class="c-timeline__dot"></div></div>
+                        <div class="c-timeline__content-mobile"></div>
                     </div>
-                    <div class="timeline-item md:flex-row-reverse">
-                        <div class="timeline-content-right md:text-left">
-                            <h3 class="timeline-title">Open To Work</h3>
+                    <div class="c-timeline__item c-timeline__item--right">
+                        <div class="c-timeline__content c-timeline__content--right">
+                            <h3 class="c-timeline__title">Open To Work</h3>
                         </div>
-                        <div class="timeline-dot-container-right"><div class="timeline-dot"></div></div>
-                        <div class="timeline-content-mobile"></div>
+                        <div class="c-timeline__dot-container c-timeline__dot-container--right"><div class="c-timeline__dot"></div></div>
+                        <div class="c-timeline__content-mobile"></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="skills" class="py-16 sm:py-20 bg-brand-pink-light">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="section-title mb-3">MY SKILLS</h2>
-                <p class="text-center text-brand-gray-med max-w-xl mx-auto mb-12 sm:mb-16">
+        <section id="skills" class="c-section bg-brand-pink-light">
+            <div class="c-section__container">
+                <h2 class="c-section__title c-section__title--spaced">MY SKILLS</h2>
+                <p class="c-section__subtitle">
                     Explore my skill in Front-End Development, Web Design, Data Analyst, and Content Writing
                 </p>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="skill-card">
-                        <h3 class="skill-title">Web Design/Frontend Development</h3>
-                        <p class="skill-description">Designing and developing user-friendly, responsive websites and web apps using HTML, CSS, JavaScript, and frameworks (like React/Next.js). Focused on creating great user experiences (UX) from designs and ensuring good performance.</p>
+                <div class="c-skills-grid">
+                    <div class="c-skill-card">
+                        <h3 class="c-skill-card__title">Web Design/Frontend Development</h3>
+                        <p class="c-skill-card__description">Designing and developing user-friendly, responsive websites and web apps using HTML, CSS, JavaScript, and frameworks (like React/Next.js). Focused on creating great user experiences (UX) from designs and ensuring good performance.</p>
+                        </div>
+                    <div class="c-skill-card">
+                        <h3 class="c-skill-card__title">Content Writing (SEO Focused)</h3>
+                        <p class="c-skill-card__description">Creating well-researched articles on diverse topics. Experienced in SEO content optimization (keywords, meta descriptions, title tags) for better online visibility, along with careful editing to ensure high-quality, error-free writing.</p>
                     </div>
-                    <div class="skill-card">
-                        <h3 class="skill-title">Content Writing (SEO Focused)</h3>
-                        <p class="skill-description">Creating well-researched articles on diverse topics. Experienced in SEO content optimization (keywords, meta descriptions, title tags) for better online visibility, along with careful editing to ensure high-quality, error-free writing.</p>
+                    <div class="c-skill-card">
+                        <h3 class="c-skill-card__title">Data Analyst Skills</h3>
+                        <p class="c-skill-card__description">Experience in handling data operations, processing, analysis, and providing insightful reports. Proficient with tools like CMS, SAP, and potentially Python for data tasks.</p>
                     </div>
-                    <div class="skill-card">
-                        <h3 class="skill-title">Data Analyst Skills</h3>
-                        <p class="skill-description">Experience in handling data operations, processing, analysis, and providing insightful reports. Proficient with tools like CMS, SAP, and potentially Python for data tasks.</p>
-                    </div>
-                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="projects" class="py-16 sm:py-20 bg-brand-white">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="section-title mb-12 sm:mb-16">MY PROJECT</h2>
-                <div class="project-card">
-                    <div class="project-image-container">
-                        <img src="images/project1.svg" alt="DonasiKita Project" class="project-image">
+        <section id="projects" class="c-section bg-brand-white">
+            <div class="c-section__container">
+                <h2 class="c-section__title c-section__title--spaced">MY PROJECT</h2>
+                <div class="c-project-card">
+                    <div class="c-project-card__image-container">
+                        <img src="images/project1.svg" alt="DonasiKita Project" class="c-project-card__image">
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title">
+                    <div class="c-project-card__content">
+                        <h3 class="c-project-card__title">
                             DonasiKita - <span class="font-normal">Final Project at MAXY ACADEMY as Front-End Developer</span>
                         </h3>
-                        <p class="project-description">
+                        <p class="c-project-card__description">
                             DonasiKita is a charity platform designed to facilitate the connection between charity organizations and potential donors. It allows organizations to manage and showcase their needs and events, while also providing a simple and secure platform for users to contribute to causes they care about. Through DonasiKita, users can make donations, participate in charity events, and stay updated with the organization's latest news.
                         </p>
                     </div>
                 </div>
+                 <div class="text-center mt-10">
+                     <a href="#contact" class="c-button c-button--primary">Let’s Work Together!</a>
+                </div>
             </div>
         </section>
 
-        <section id="achievements" class="py-16 sm:py-20 bg-brand-pink-light">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="section-title mb-12 sm:mb-16">ACHIEVEMENT</h2>
-                <div class="achievement-card">
-                    <div class="achievement-images-container">
-                        <img src="images/achivement1.svg" alt="PKM KC Achievement Image 1" class="achievement-image">
-                        <img src="images/achivement2.svg" alt="PKM KC Achievement Image 2" class="achievement-image">
-                        <img src="images/achivement3.svg" alt="PKM KC Achievement Image 3" class="achievement-image">
+        <section id="achievements" class="c-section bg-brand-pink-light">
+            <div class="c-section__container">
+                <h2 class="c-section__title c-section__title--spaced">ACHIEVEMENT</h2>
+                <div class="c-achievement-card">
+                    <div class="c-achievement-card__images-container">
+                        <img src="images/achivement1.svg" alt="PKM KC Achievement Image 1" class="c-achievement-card__image">
+                        <img src="images/achivement2.svg" alt="PKM KC Achievement Image 2" class="c-achievement-card__image">
+                        <img src="images/achivement3.svg" alt="PKM KC Achievement Image 3" class="c-achievement-card__image">
                     </div>
-                    <div class="achievement-content">
-                        <h3 class="achievement-title">
+                    <div class="c-achievement-card__content">
+                        <h3 class="c-achievement-card__title">
                             2nd Place Winner - PKM-KC <span class="font-normal">by Asosiasi MIPA LPTK Indonesia</span>
                         </h3>
-                        <p class="achievement-credential">
+                        <p class="c-achievement-card__credential">
                             Credential Number : No. 6.11.2.UN32.3/KM/2024
                         </p>
-                        <p class="achievement-description">
+                        <p class="c-achievement-card__description">
                             As Team Leader, secured 2nd Place in the PKM-KC (Student Creativity Program - Karsa Cipta) AMLI 2024 competition for our innovative project, 'Anatomy Magic Card.' We developed engaging educational flashcards using Augmented Reality (AR) to help elementary school students learn about human anatomy in a fun, visual, and interactive way, making complex concepts easier to understand.
                         </p>
                     </div>
                 </div>
+                 <div class="text-center mt-10">
+                     <a href="#contact" class="c-button c-button--primary">Let’s Work Together!</a>
+                </div>
             </div>
         </section>
 
-        <section id="contact" class="py-16 sm:py-20 bg-brand-gray-dark text-brand-white">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-3xl sm:text-4xl font-bold mb-4">INTERESTED TO WORKING TOGETHER?</h2>
-                <p class="text-xl sm:text-2xl text-gray-300 mb-8">CONTACT ME!</p>
-                
-                <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-10">
-                    <a id="emailLink" href="mailto:arshandariza@gmail.com" class="contact-email-link">
+        <section id="contact" class="c-contact-cta">
+            <div class="c-contact-cta__content">
+                <h2 class="c-contact-cta__title">INTERESTED TO WORKING TOGETHER?</h2>
+                <p class="c-contact-cta__subtitle">CONTACT ME!</p>
+                <div class="c-contact-cta__email-group">
+                    <a id="emailLink" href="mailto:arshandariza@gmail.com" class="c-contact-cta__email-link">
                         <img src="images/mail.svg" alt="Email" class="w-5 h-5 mr-2 inline-block">
                         <span id="emailToCopy">arshandariza@gmail.com</span>
                     </a>
-                    <button id="copyEmailButton" class="contact-copy-button">
+                    <button id="copyEmailButton" class="c-button c-button--secondary c-contact-cta__copy-button">
                         copy
                     </button>
                 </div>
-                <span id="copyFeedback" class="text-sm text-brand-pink-dark" style="display: none;">Email tersalin!</span>
-
-                <div class="mt-10">
-                    <p class="text-lg text-gray-400 mb-2">ARSHANDA RIZA PUTRI</p>
-                    <p class="text-sm text-gray-500 max-w-xl mx-auto">
-                        Informatics Engineering student interested in Frontend Development, Web Development, and Data Analysis. Skilled with frontend tools (HTML, CSS, JavaScript, React, Next.js) and Python.
-                    </p>
-                </div>
+                <span id="copyFeedback" class="c-contact-cta__feedback" style="display: none;">Email tersalin!</span>
             </div>
         </section>
     </main>
 
-    <footer class="bg-brand-white py-10">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
-                <div>
-                    <h4 class="font-bold text-brand-gray-dark text-lg mb-2">ARSHANDA RIZA PUTRI</h4>
-                     </div>
-                <div>
-                    <h4 class="font-bold text-brand-gray-dark text-lg mb-2">SITEMAP</h4>
-                    <ul class="space-y-1 text-sm">
-                        <li><a href="#experience" class="footer-link">Experience</a></li>
-                        <li><a href="#skills" class="footer-link">Skill</a></li>
-                        <li><a href="#projects" class="footer-link">Project</a></li>
-                        <li><a href="#achievements" class="footer-link">Achievement</a></li>
-                        <li><a href="#contact" class="footer-link">Contact</a></li>
+    <footer class="c-footer">
+        <div class="c-footer__container">
+            <div class="c-footer__grid">
+                <div class="c-footer__column">
+                    <h4 class="c-footer__title">ARSHANDA RIZA PUTRI</h4>
+                    <p class="c-footer__description">
+                        Informatics Engineering student interested in Frontend Development, Web Development, and Data Analysis. Skilled with frontend tools (HTML, CSS, JavaScript, React, Next.js) and Python.
+                    </p>
+                </div>
+                <div class="c-footer__column">
+                    <h4 class="c-footer__title">SITEMAP</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#hero" class="c-footer__link">Home</a></li>
+                        <li><a href="#experience" class="c-footer__link">Experience</a></li>
+                        <li><a href="#skills" class="c-footer__link">Skill</a></li>
+                        <li><a href="#projects" class="c-footer__link">Project</a></li>
+                        <li><a href="#achievements" class="c-footer__link">Achievement</a></li>
+                        <li><a href="#contact" class="c-footer__link">Contact</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="font-bold text-brand-gray-dark text-lg mb-2">CONTACT ME</h4>
-                    <ul class="space-y-1 text-sm">
+                <div class="c-footer__column">
+                    <h4 class="c-footer__title">CONTACT ME</h4>
+                    <ul class="space-y-2">
                         <li>
-                            <a href="mailto:arshandariza@gmail.com" class="footer-link inline-flex items-center">
-                                <img src="images/mail.svg" alt="Email" class="w-4 h-4 mr-2"> arshandariza@gmail.com
+                            <a href="mailto:arshandariza@gmail.com" class="c-footer__link c-footer__link--iconed">
+                                <img src="images/mail.svg" alt="Email" class="c-footer__icon"> arshandariza@gmail.com
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.linkedin.com/in/arshandarizaputri/" target="_blank" rel="noopener noreferrer" class="footer-link inline-flex items-center">
-                                <img src="images/brand-linkedin.svg" alt="LinkedIn" class="w-4 h-4 mr-2"> Arshanda Riza Putri
+                            <a href="https://www.linkedin.com/in/arshandarizaputri/" target="_blank" rel="noopener noreferrer" class="c-footer__link c-footer__link--iconed">
+                                <img src="images/brand-linkedin.svg" alt="LinkedIn" class="c-footer__icon"> Arshanda Riza Putri
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.instagram.com/arshandarizaa/" target="_blank" rel="noopener noreferrer" class="footer-link inline-flex items-center">
-                                <img src="images/brand-instagram.svg" alt="Instagram" class="w-4 h-4 mr-2"> arshandarizaa
+                            <a href="https://www.instagram.com/arshandarizaa/" target="_blank" rel="noopener noreferrer" class="c-footer__link c-footer__link--iconed">
+                                <img src="images/brand-instagram.svg" alt="Instagram" class="c-footer__icon"> arshandarizaa
                             </a>
                         </li>
                         <li>
-                            <a href="https://github.com/arshandarizaa" target="_blank" rel="noopener noreferrer" class="footer-link inline-flex items-center">
-                                <img src="images/brand-github.svg" alt="GitHub" class="w-4 h-4 mr-2"> arshandarizaa
+                            <a href="https://github.com/arshandarizaa" target="_blank" rel="noopener noreferrer" class="c-footer__link c-footer__link--iconed">
+                                <img src="images/brand-github.svg" alt="GitHub" class="c-footer__icon"> arshandarizaa
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="text-center text-sm text-brand-gray-med mt-8 border-t border-brand-gray-light pt-6">
+            <div class="c-footer__copyright">
                 &copy; <span id="currentYear"></span> Arshanda Riza Putri. All Rights Reserved.
             </div>
         </div>
