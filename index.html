@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,16 @@
           theme: {
             extend: {
               fontFamily: {
-                poppins: ['Poppins', 'sans-serif'], // Mengatur font Poppins
+                poppins: ['Poppins', 'sans-serif'], // Mengatur font Poppins untuk digunakan dengan class font-poppins
+              },
+              colors: {
+                // Warna dari Figma Anda (ganti jika perlu)
+                'brand-pink-light': '#FEF6F6', // Background utama halaman
+                'brand-pink-med': '#FBCFE8',  // Untuk aksen seperti dot di timeline (pink-200 Tailwind)
+                'brand-pink-dark': '#F472B6', // Untuk hover atau aksen lebih kuat (pink-400 Tailwind)
+                'brand-gray-dark': '#1F2937', // Seperti bg-gray-800
+                'brand-gray-med': '#4B5563',  // Seperti text-gray-700
+                'brand-gray-light': '#D1D5DB',// Seperti border-gray-300
               }
             }
           }
@@ -20,39 +29,67 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/styles.css">
-
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif; /* Default font untuk body */
-            /* Background utama halaman bisa diletakkan di sini agar full-bleed */
-            /* atau pada div pembungkus utama di bawah jika desainnya memang fixed-width dengan background spesifik */
-        }
-    </style>
 </head>
-<body class="bg-pink-100/95"> <div class="w-[1512px] h-[5388px] relative overflow-hidden mx-auto bg-pink-100/95"> <div class="w-[1218px] h-[890px] left-[147px] top-[2380px] absolute bg-pink-100/95 rounded-3xl"></div>
-      
-      <img class="w-[1439.78px] h-96 left-[37px] top-[202px] absolute opacity-70" src="images/HARUS_DIGANTI_GAMBAR_ASLI_ANDA.jpg" alt="Header background" />
-      
-      <div class="w-56 h-12 left-[55px] top-[50px] absolute bg-white rounded-[10px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] border"></div>
-      <div class="w-52 h-7 left-[70px] top-[59px] absolute justify-start text-black text-xl font-bold font-['Poppins']">Shanda’s Portofolio</div>
-      
-      <div class="w-6 h-6 left-[1144px] top-[5182px] absolute overflow-hidden">
-        <img src="images/icon-email.svg" alt="Email Icon" class="w-full h-full">
-        </div>
-      <div class="w-6 h-6 left-[1144px] top-[5215px] absolute overflow-hidden">
-        <img src="images/icon-linkedin.svg" alt="LinkedIn Icon" class="w-full h-full">
-      </div>
-      <div class="w-6 h-6 left-[1144px] top-[5247px] absolute overflow-hidden">
-        <img src="images/icon-instagram.svg" alt="Instagram Icon" class="w-full h-full">
-      </div>
-      <div class="w-6 h-6 left-[1144px] top-[5279px] absolute overflow-hidden">
-        <img src="images/icon-github.svg" alt="GitHub Icon" class="w-full h-full">
-      </div>
+<body class="font-poppins bg-brand-pink-light text-brand-gray-med">
 
-      </div> 
-    <script src="js/script.js"></script>
-</body>
-</html>
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" id="nav-logo" class="text-xl font-bold text-brand-gray-dark">Shanda’s Portofolio</a>
+            
+            <div class="md:hidden">
+                <button id="mobile-menu-button" aria-label="Buka Menu" class="text-brand-gray-dark focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+
+            <ul id="desktop-menu" class="hidden md:flex space-x-6 lg:space-x-8">
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#skills" class="nav-link">Skill</a></li>
+                <li><a href="#projects" class="nav-link">Project</a></li>
+                <li><a href="#achievements" class="nav-link">Achievement</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu" class="md:hidden hidden bg-white absolute w-full shadow-lg">
+            <ul class="flex flex-col items-center py-2">
+                <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+                <li><a href="#skills" class="mobile-nav-link">Skill</a></li>
+                <li><a href="#projects" class="mobile-nav-link">Project</a></li>
+                <li><a href="#achievements" class="mobile-nav-link">Achievement</a></li>
+                <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="relative min-h-[calc(100vh-68px)] flex flex-col items-center justify-center text-center py-20 px-4 overflow-hidden">
+            <div class="relative z-10">
+                <h2 class="text-5xl md:text-6xl font-bold text-brand-gray-dark/40">PORTOFOLIO</h2>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-brand-gray-dark mt-2 sm:mt-4">
+                    ARSHANDA RIZA PUTRI
+                </h1>
+                <p class="mt-4 md:mt-6 max-w-2xl mx-auto text-lg sm:text-xl">
+                    Undergraduate Informatics Engineer | Interest in Website Design | Front-End Experience | Content Writer | Data Analyst
+                </p>
+                <a href="#contact" class="hero-button mt-8 md:mt-10">
+                    Let’s Work Together!
+                </a>
+            </div>
+        </section>
+
+        <section id="experience" class="py-16 sm:py-20 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="section-title">EXPERIENCE</h2>
+                
+                <div class="relative mt-12">
+                    <div class="timeline-line"></div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content-left">
+                            <h3 class="timeline-title">Community Writer</h3>
+                            <p class="timeline-date">June 2022 - Desember 2023</p>
+                            </div>
+                        <div class="timeline-dot-container-left"><div class="timeline-dot"></div></div>
