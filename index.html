@@ -40,12 +40,20 @@
 </head>
 <body class="font-poppins bg-brand-pink-light text-brand-gray-med">
 
-    <header class="c-navbar">
+    <header class="c-navbar"> {/* Gaya background dan shadow akan diatur di styles.css */}
         <div class="c-navbar__container">
             <a href="#" id="nav-logo" class="c-navbar__logo">Shanda’s Portofolio</a>
-            <button id="mobile-menu-button" class="c-navbar__mobile-toggle" aria-label="Buka Menu" aria-expanded="false">
-                <svg class="icon" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            
+            {/* Tombol Menu Mobile (tetap ada untuk responsivitas) */}
+            <button id="mobile-menu-button" class="c-navbar__mobile-toggle" aria-label="Buka menu" aria-expanded="false">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
             </button>
+
+            {/* Menu Desktop (Akan berjejer horizontal via CSS) */}
             <nav id="desktop-menu" class="c-navbar__desktop-menu">
                 <ul class="c-navbar__list">
                     <li><a href="#experience" class="c-navbar__link">Experience</a></li>
@@ -56,6 +64,8 @@
                 </ul>
             </nav>
         </div>
+
+        {/* Menu Mobile Dropdown (Struktur tetap, tampilan via CSS dan JS) */}
         <nav id="mobile-menu" class="c-navbar__mobile-menu">
             <ul class="c-navbar__mobile-list">
                 <li><a href="#experience" class="c-navbar__mobile-link">Experience</a></li>
