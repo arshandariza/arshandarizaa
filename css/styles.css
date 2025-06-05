@@ -1,0 +1,28 @@
+/* css/styles.css */
+
+/*
+  File ini untuk CSS kustom tambahan.
+  Karena Anda menggunakan Tailwind CSS, sebagian besar styling ada di kelas HTML.
+  Gunakan file ini jika ada gaya spesifik yang sulit dicapai dengan Tailwind
+  atau untuk preferensi pribadi.
+*/
+
+/* Contoh: Anda mungkin ingin memastikan font Poppins diterapkan dengan benar di semua elemen
+   meskipun Tailwind dan <style> di HTML sudah mencoba menanganinya.
+   Ini bisa berfungsi sebagai fallback tambahan. */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Anda bisa menambahkan gaya kustom lain di sini jika diperlukan */
+/* Misalnya, jika Anda ingin efek hover tertentu pada link di sitemap *.sitemap-link:hover {
+  /* color: #yourcustomcolor; */
+  /* text-decoration: underline; */
+
+
+/* Catatan untuk ikon di footer:
+   Kode HTML Anda menggunakan div dengan outline untuk ikon.
+   Akan lebih baik jika Anda menggunakan SVG ikon asli dari Figma atau library ikon
+   dan memasukkannya sebagai <img> atau SVG inline.
+   Jika tetap menggunakan div, Anda bisa menambahkan style di sini atau sebagai kelas Tailwind.
+*/
