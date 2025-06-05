@@ -73,7 +73,7 @@ body {
 
 /* --- Navbar --- */
 .c-navbar {
-  background-color: #FAE8ED; /* Revisi: Warna navbar diubah */
+  background-color: #FEF6F6; /* Revisi: Warna navbar diubah */
   /* box-shadow: none; /* Revisi: Shadow dihilangkan. Baris ini bisa dihapus atau dikosongkan. */
   position: sticky;
   top: 0;
