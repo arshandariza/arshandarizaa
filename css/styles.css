@@ -1,10 +1,7 @@
-/* === css/styles.css === */
-
-/* --- Global & Reset Dasar --- */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #FEF6F6; /* brand-pink-light */
-    color: #4B5563; /* brand-gray-med */
+    background-color: #FEF6F6; 
+    color: #4B5563; 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.6;
@@ -16,7 +13,6 @@ body {
     box-sizing: border-box;
 }
 
-/* --- Helper: Container (jika tidak pakai .container dari Tailwind di HTML) --- */
 .container {
     width: 100%;
     max-width: 1100px;
@@ -32,11 +28,10 @@ body {
     }
 }
 
-/* --- Komponen Tombol --- */
 .c-button {
     display: inline-block;
     font-weight: 600;
-    padding: 10px 28px; /* Sedikit disesuaikan */
+    padding: 10px 28px; 
     border-radius: 8px;
     text-decoration: none;
     text-align: center;
@@ -48,12 +43,12 @@ body {
     transform: translateY(-2px);
 }
 .c-button--primary {
-    background-color: #303030; /* brand-button-bg (sesuai contoh desain tombol gelap) */
+    background-color: #303030; 
     color: #FFFFFF;
-    font-size: 1rem; /* Disesuaikan agar tidak terlalu besar */
+    font-size: 1rem; 
 }
 .c-button--primary:hover {
-    background-color: #1A1A1A; /* brand-button-hover */
+    background-color: #1A1A1A; 
 }
 .c-button--copy {
     background-color: #FFFFFF;
@@ -62,7 +57,7 @@ body {
     padding: 8px 16px;
     text-transform: uppercase;
     border: 1px solid #D1D5DB;
-    border-radius: 6px; /* Disesuaikan dengan desain tombol copy */
+    border-radius: 6px; 
 }
 .c-button--copy:hover {
     background-color: #F3F4F6;
@@ -70,131 +65,128 @@ body {
 
 /* --- Navbar --- */
 .c-navbar {
-    background-color: #FEF6F6; /* Diubah sesuai permintaan terakhir agar sama dengan body */
-    position: sticky;
+    background-color: #FEF6F6; 
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    /* box-shadow: none; /* Dihilangkan sesuai permintaan */
 }
 .c-navbar__container {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 20px; /* Padding horizontal untuk container navbar */
+    padding: 0 20px; 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 72px; /* Tinggi navbar konsisten, bisa disesuaikan */
+    height: 72px; 
 }
 .c-navbar__logo {
-    font-size: 1.125rem; /* text-lg */
-    font-weight: 700; /* bold */
-    color: #1F2937; /* brand-gray-dark (warna teks logo) */
+    font-size: 1.125rem; 
+    font-weight: 700; 
+    color: #1F2937; 
     text-decoration: none;
 }
 .c-navbar__mobile-toggle {
-    display: none; /* Defaultnya disembunyikan untuk desktop, tampil di mobile via media query */
+    display: none; 
     background: none;
     border: none;
     cursor: pointer;
     padding: 0.5rem;
-    color: #1F2937; /* Warna ikon hamburger */
+    color: #1F2937; 
 }
-.c-navbar__mobile-toggle .icon { /* Kelas untuk SVG ikon di dalam tombol */
+.c-navbar__mobile-toggle .icon { 
     width: 24px;
     height: 24px;
 }
-.c-navbar__menu { /* Ini adalah tag <nav> yang membungkus <ul> untuk desktop */
-    display: none; /* Defaultnya disembunyikan untuk mobile */
+.c-navbar__menu { 
+    display: none; 
 }
-.c-navbar__list { /* Ini adalah tag <ul> */
-    display: flex; /* Membuat <li> (item menu) berjejer horizontal */
+.c-navbar__list { 
+    display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
-    align-items: center; /* Menjaga item menu sejajar secara vertikal */
+    align-items: center; 
 }
-.c-navbar__list li + li { /* Memberi jarak antar item menu desktop */
-    margin-left: 1.75rem; /* Sesuaikan jaraknya jika perlu */
+.c-navbar__list li + li { 
+    margin-left: 1.75rem; 
 }
-.c-navbar__link { /* Untuk setiap <a> di menu desktop */
-    font-size: 0.9rem; /* Ukuran font link navbar */
-    color: #4B5563; /* brand-gray-med (warna teks link) */
+.c-navbar__link { 
+    font-size: 0.9rem; 
+    color: #4B5563; 
     text-decoration: none;
     transition: color 0.3s ease;
-    padding: 0.5rem 0.25rem; /* Padding agar area klik lebih baik */
+    padding: 0.5rem 0.25rem; 
 }
 .c-navbar__link:hover {
-    color: #E53E99; /* brand-pink-accent (warna hover link) */
+    color: #E53E99; 
 }
 
 /* --- Mobile Menu Dropdown --- */
 .c-navbar__mobile-menu {
-    display: none; /* Default disembunyikan */
-    background-color: #FFFFFF; /* Background menu dropdown */
+    display: none; 
+    background-color: #FFFFFF; 
     position: absolute;
-    top: 72px; /* Tepat di bawah navbar (sesuaikan dengan tinggi .c-navbar__container) */
+    top: 72px; 
     left: 0;
     right: 0;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Shadow untuk dropdown */
-    border-top: 1px solid #E5E7EB; /* Garis pemisah tipis */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+    border-top: 1px solid #E5E7EB; 
 }
-.c-navbar__mobile-menu.is-open { /* Kelas ini ditambahkan/dihapus oleh JavaScript */
+.c-navbar__mobile-menu.is-open { 
     display: block;
 }
 .c-navbar__mobile-list {
     list-style: none;
     margin: 0;
-    padding: 0.5rem 0; /* Padding atas-bawah untuk list */
+    padding: 0.5rem 0; 
 }
 .c-navbar__mobile-link {
     display: block;
-    padding: 0.75rem 1rem; /* Padding untuk setiap link mobile */
+    padding: 0.75rem 1rem; 
     text-align: center;
     text-decoration: none;
-    color: #4B5563; /* Warna teks link mobile */
+    color: #4B5563; 
     transition: background-color 0.3s ease;
 }
 .c-navbar__mobile-link:hover {
-    background-color: #FFF1F2; /* Warna hover background link mobile */
+    background-color: #FFF1F2; 
 }
-
 /* --- Media Query untuk Responsivitas Navbar --- */
-@media (max-width: 767px) { /* Di bawah md breakpoint (misalnya 768px) */
-    .c-navbar__desktop-menu { /* Menggunakan .c-navbar__menu untuk nav desktop */
-        display: none; /* Sembunyikan menu desktop */
+@media (max-width: 767px) { 
+    .c-navbar__desktop-menu { 
+        display: none; 
     }
-    .c-navbar__menu { /* Mengacu pada <nav id="desktop-menu"> */
+    .c-navbar__menu { 
         display: none;
     }
     .c-navbar__mobile-toggle {
-        display: block; /* Tampilkan tombol hamburger */
+        display: block; 
     }
     .c-navbar__container {
-        padding: 0 1rem; /* Padding container navbar di mobile lebih kecil */
+        padding: 0 1rem; 
     }
 }
-@media (min-width: 768px) { /* md breakpoint ke atas */
-    .c-navbar__menu { /* Mengacu pada <nav id="desktop-menu"> */
-        display: flex; /* Pastikan menu desktop tampil */
+@media (min-width: 768px) { 
+    .c-navbar__menu { 
+        display: flex; 
     }
     .c-navbar__mobile-toggle {
-        display: none; /* Sembunyikan tombol hamburger di desktop */
+        display: none; 
     }
 }
-
 /* --- Hero Section --- */
 .c-hero {
     position: relative;
-    min-height: calc(100vh - 72px); /* Disesuaikan dengan tinggi navbar baru */
+    min-height: calc(100vh - 72px); 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 4rem 1.25rem; /* Padding dikurangi sedikit */
+    padding: 4rem 1.25rem; 
     overflow: hidden;
     background-color: #FEF6F6;
 }
@@ -203,55 +195,55 @@ body {
     inset: 0;
     z-index: 0;
     display: flex;
-    align-items: center; /* Vertically center */
-    justify-content: center; /* Horizontally center */
+    align-items: center; 
+    justify-content: center; 
     pointer-events: none;
 }
 .c-hero__bg-image {
     width: 100%;
-    max-width: 950px; /* Ukuran gambar header sedikit lebih besar */
-    transform: scale(1.2); /* Perbesar gambar sedikit */
+    max-width: 950px; 
+    transform: scale(1.2); 
     height: auto;
     object-fit: contain;
-    opacity: 0.5; /* Sedikit lebih transparan */
+    opacity: 0.5;
 }
 .c-hero__content {
     position: relative;
     z-index: 1;
 }
 .c-hero__supertitle {
-    font-size: 1.75rem; /* Lebih kecil lagi */
+    font-size: 1.75rem; 
     font-weight: 700;
-    color: #A0AEC0; /* brand-hero-supertitle */
+    color: #A0AEC0; 
     margin-bottom: 0;
-    line-height: 1; /* Rapatkan ke judul utama */
+    line-height: 1; 
 }
 .c-hero__title {
-    font-size: 3.25rem; /* Lebih kecil lagi */
+    font-size: 3.25rem; 
     font-weight: 800;
     color: #1F2937;
-    margin-top: 0.25rem; /* mt-1 */
+    margin-top: 0.25rem; 
     line-height: 1.1;
 }
 .c-hero__subtitle {
-    margin-top: 1.25rem; /* mt-5 */
+    margin-top: 1.25rem; 
     max-width: 42rem;
     margin-left: auto;
     margin-right: auto;
-    font-size: 1.05rem; /* Sedikit lebih kecil */
+    font-size: 1.05rem; 
     line-height: 1.75;
     color: #4B5563;
 }
 .c-hero__cta {
-    margin-top: 2rem; /* mt-8 */
+    margin-top: 2rem; 
 }
 
 /* --- Section Styling Global --- */
 .c-section {
-    padding: 3.5rem 0; /* py-14 (sedikit disesuaikan) */
+    padding: 3.5rem 0; 
 }
 @media (min-width: 768px) {
-    .c-section { padding: 4.5rem 0; } /* py-18 */
+    .c-section { padding: 4.5rem 0; }
 }
 .c-section__container {
     width: 100%;
@@ -262,14 +254,14 @@ body {
     padding-right: 1.25rem;
 }
 .c-section__title {
-    font-size: 2rem; /* text-3xl (disesuaikan) */
+    font-size: 1.5rem; 
     font-weight: 700;
     text-align: center;
     color: #1F2937;
-    margin-bottom: 2.5rem; /* mb-10 */
+    margin-bottom: 2.5rem; 
 }
 @media (min-width: 640px) {
-    .c-section__title { font-size: 2.25rem; } /* text-4xl */
+    .c-section__title { font-size: 2.25rem; } 
 }
 .c-section__title--left-align {
     text-align: left;
@@ -283,36 +275,36 @@ body {
 /* --- Experience Section (Timeline) - Perbaikan Alignment --- */
 .c-timeline {
     position: relative;
-    max-width: 800px; /* Kontainer timeline lebih ramping */
+    max-width: 800px; 
     margin: 2rem auto;
-    padding: 0; /* Hapus padding default agar bisa kontrol dari item */
+    padding: 0; 
 }
-.c-timeline::before { /* Garis tengah utama */
+.c-timeline::before { 
     content: '';
     position: absolute;
     left: 50%;
-    top: 10px; /* Mulai sedikit di bawah awal section */
-    bottom: 10px; /* Berakhir sedikit di atas akhir section */
+    top: 10px; 
+    bottom: 10px; 
     width: 3px;
-    background-color: #FBCFE8; /* brand-pink-med */
+    background-color: #FBCFE8; 
     transform: translateX(-50%);
     z-index: 0;
 }
 .c-timeline__item {
-    padding: 20px 0; /* Padding atas bawah untuk jarak antar item */
+    padding: 20px 0; 
     position: relative;
     width: 50%;
     box-sizing: border-box;
     z-index: 1;
 }
-.c-timeline__item:nth-child(odd) { /* Item di kiri */
-    padding-right: 50px; /* Jarak dari garis tengah ke konten */
+.c-timeline__item:nth-child(odd) { 
+    padding-right: 50px; 
     text-align: right;
     float: left;
     clear:both;
 }
-.c-timeline__item:nth-child(even) { /* Item di kanan */
-    padding-left: 50px; /* Jarak dari garis tengah ke konten */
+.c-timeline__item:nth-child(even) {
+    padding-left: 50px;
     text-align: left;
     float: right;
     clear:both;
@@ -323,18 +315,18 @@ body {
     display: table;
     clear: both;
 }
-.c-timeline__point { /* Titik pada timeline */
+.c-timeline__point { 
     width: 18px;
     height: 18px;
-    background-color: #E53E99; /* brand-pink-accent */
-    border: 3px solid #FEF6F6; /* bg-brand-pink-light */
+    background-color: #E53E99; 
+    border: 3px solid #FEF6F6; /
     border-radius: 50%;
     position: absolute;
-    top: 20px; /* Posisi vertikal dot, sesuaikan dengan tinggi teks */
+    top: 20px; 
     z-index: 2;
 }
 .c-timeline__item:nth-child(odd) .c-timeline__point {
-    right: -9px; /* Setengah lebar dot, agar pas di garis tengah */
+    right: -9px; 
     transform: translateX(50%);
 }
 .c-timeline__item:nth-child(even) .c-timeline__point {
@@ -342,7 +334,7 @@ body {
     transform: translateX(-50%);
 }
 .c-timeline__content {
-    padding: 10px; /* Padding di dalam konten */
+    padding: 10px;
     border-radius: 6px;
 }
 .c-timeline__item-title {
@@ -353,14 +345,14 @@ body {
 }
 .c-timeline__item-date {
     font-size: 0.875rem;
-    color: #E53E99; /* brand-pink-accent */
+    color: #E53E99;
     font-weight: 500;
     margin-bottom: 0.5rem;
 }
 .c-timeline__item-description {
     font-size: 0.9rem;
     line-height: 1.6;
-    color: #4B5563; /* brand-gray-med */
+    color: #4B5563; 
 }
 
 /* --- My Skills Section --- */
@@ -370,7 +362,7 @@ body {
 }
 @media (min-width: 768px) {
     .c-skills__layout {
-        grid-template-columns: 1fr 1.5fr; /* Kolom kiri lebih kecil */
+        grid-template-columns: 1fr 1.5fr; 
         gap: 3rem;
         align-items: flex-start;
     }
@@ -382,7 +374,7 @@ body {
     font-size: 1rem;
     line-height: 1.6;
     color: #4B5563;
-    text-align: left;
+    text-align: center;
     margin-bottom: 0;
 }
 .c-skills__accordion-column {
@@ -393,13 +385,13 @@ body {
     border: 1px solid #E5E7EB;
     border-radius: 8px;
     margin-bottom: 1rem;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.03); /* Shadow lebih halus */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
 }
 .c-accordion-button {
     background: none;
     border: none;
     width: 100%;
-    padding: 1rem 1.25rem; /* py-4 px-5 */
+    padding: 1rem 1.25rem; 
     text-align: left;
     font-size: 1.125rem;
     font-weight: 600;
@@ -409,7 +401,7 @@ body {
     align-items: center;
     cursor: pointer;
     transition: background-color 0.2s ease;
-    border-radius: 8px; /* Agar hover tidak keluar dari border */
+    border-radius: 8px; 
 }
 .c-accordion-button:hover {
     background-color: #F9FAFB;
@@ -433,20 +425,34 @@ body {
     line-height: 1.7;
     color: #4B5563;
     display: none;
-    border-top: 1px solid #E5E7EB;
+    /* border-top: 1px solid #E5E7EB; */
 }
 .c-accordion-content.is-open {
     display: block;
 }
 
 /* --- Project & Achievement Cards --- */
+.project {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.container-project {
+    width: 80%;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
 .c-card { /* Card umum untuk Project dan Achievement */
     background-color: #FFFFFF;
     border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.08); /* Shadow lebih terlihat */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08); 
     overflow: hidden;
     border: 1px solid #F3F4F6;
-    margin-bottom: 2.5rem; /* Jarak antar card jika ada lebih dari satu per section */
+    margin-bottom: 2.5rem; 
 }
 .c-project-card {
     display: flex;
@@ -455,7 +461,7 @@ body {
 @media (min-width: 768px) {
     .c-project-card {
         flex-direction: row;
-        align-items: stretch; /* Agar tinggi image area dan content area sama */
+        align-items: stretch; 
     }
 }
 .c-project-card__image-area {
@@ -475,17 +481,17 @@ body {
 .c-project-card__image {
     display: block;
     width: 100%;
-    max-width: 350px; /* Batas max gambar proyek */
+    max-width: 350px; =/
     height: auto;
     object-fit: contain;
-    border-radius: 6px; /* Sedikit lengkungan jika SVG punya background */
+    border-radius: 6px; =
 }
 .c-project-card__content-area {
     padding: 1.5rem;
-    flex-grow: 1; /* Agar mengambil sisa ruang */
+    flex-grow: 1; =
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Pusatkan teks vertikal jika perlu */
+    justify-content: center; =
 }
 @media (min-width: 768px) {
     .c-project-card__content-area {
@@ -493,7 +499,7 @@ body {
     }
 }
 .c-project-card__title {
-    font-size: 1.375rem; /* Sedikit lebih besar */
+    font-size: 1.375rem; 
     font-weight: 700;
     color: #1F2937;
     margin-bottom: 0.75rem;
@@ -504,9 +510,18 @@ body {
     color: #4B5563;
 }
 
+@media (max-width: 768px) {
+    .c-project-card__title {font-size:0.8rem;}
+    .c-project-card__description {font-size: 0.5rem;}
+}
+
 .c-achievement-card {
-    padding: 1.5rem;
+    padding: 1rem;
     text-align: center;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    border: none;
+    box-shadow: none;
 }
 @media (min-width: 768px) {
     .c-achievement-card { padding: 2rem; }
@@ -514,26 +529,31 @@ body {
 .c-achievement-card__images-container {
     display: flex;
     justify-content: center;
-    align-items: stretch; /* Agar semua gambar punya tinggi yang sama jika memungkinkan */
-    gap: 1rem;
+    align-items: stretch; 
+    gap: 0.5rem;
     margin-bottom: 1.5rem;
     flex-wrap: wrap;
 }
+
+@media (max-width: 768px) {
+    .c-achievement-card__images-container {gap: 1rem; padding: 0.5rem 0 1rem 0; width:100% !important;}
+}
+
 .c-achievement-card__image {
-    flex: 1 1 150px; /* Gambar bisa grow/shrink, basis 150px */
-    max-width: 180px;
-    height: auto; /* Biarkan tinggi otomatis atau set tinggi tetap */
-    min-height: 200px; /* Contoh tinggi minimal agar card gambar rata */
+    flex: 1 1 150px; 
+    max-width: 150px;
+    height: auto; 
+    min-height: 200px; 
     border-radius: 8px;
-    object-fit: contain; /* Atau cover jika rasio aspek beda */
+    object-fit: contain; 
     background-color: #F9FAFB;
     padding: 0.5rem;
     border: 1px solid #E5E7EB;
-    display: flex; /* Untuk align item di tengah jika SVG kecil */
+    display: flex; 
     align-items: center;
     justify-content: center;
 }
-.c-achievement-card__image img { /* Jika SVG ada di dalam elemen ini */
+.c-achievement-card__image img { 
     max-width: 100%;
     max-height: 100%;
 }
@@ -545,6 +565,7 @@ body {
     color: #1F2937;
     margin-bottom: 0.5rem;
 }
+
 .c-achievement-card__credential {
     font-size: 0.875rem;
     color: #6B7280;
@@ -558,37 +579,99 @@ body {
     color: #4B5563;
 }
 
-/* --- Contact CTA Section --- */
-.c-contact-cta {
-    background-color: #1F2937; /* brand-contact-bg (sesuai desain) */
-    color: #FFFFFF;
-    padding: 3rem 1.25rem;
+@media (max-width: 768px){
+    .c-achievement-card__title {font-size: 0.8rem;}
+    .c-achievement-card__credential {font-size: 0.5rem;}
+    .c-achievement-card__description {font-size: 0.5rem;}
 }
+
+.achievement-slider .swiper-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 1rem; 
+}
+
+.achievement-slider .swiper-slide {
+    width: 100% !important; 
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    background-color: #F9FAFB;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.achievement-slider .swiper-slide img {
+    max-width: 100%;
+    height: 250px; 
+    object-fit: contain;
+}
+
+.achievement-slider .swiper-pagination {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .achievement-slider .swiper-wrapper {
+        display: flex; 
+    }
+
+    .achievement-slider .swiper-slide {
+        width: 80% !important; 
+        flex-shrink: 0; 
+        height: auto; 
+    }
+
+    .achievement-slider .swiper-slide img {
+        height: auto; 
+    }
+
+    .achievement-slider .swiper-pagination {
+        display: block;
+        position: relative; 
+        bottom: 0;
+        margin-top: 1rem;
+    }
+}
+
+
+/* @media (min-width: 768px){
+    .c-achievement-card__title {font-size:0.8rem;}
+    .c-achievement-card__description {font-size: 0.5rem;}
+} */
+/* --- Contact CTA Section --- */
+
 .c-contact-cta__container {
-    max-width: 650px; /* Lebar container sesuai contoh */
+    max-width: 95%; 
     margin: 0 auto;
-    background-color: #2D3748; /* Inner box lebih gelap sedikit */
+    background-color: #2D3748; 
     padding: 2.5rem;
     border-radius: 12px;
     text-align: center;
+    margin-bottom: 2rem;
 }
 .c-contact-cta__header {
-    margin-bottom: 1.5rem; /* Jarak lebih rapat */
+    margin-bottom: 1.5rem; 
 }
 .c-contact-cta__title {
     font-size: 1.75rem;
     font-weight: 700;
     line-height: 1.2;
 }
+
+@media (max-width: 765px){
+    .c-contact-cta__title {font-size: 0.5rem;}
+}
 .c-contact-cta__subtitle {
     font-size: 1.125rem;
-    color: #E2E8F0; /* brand-contact-text */
+    color: #E2E8F0; 
     font-weight: 500;
     margin-top: 0.25rem;
 }
 .c-contact-cta__email-group {
-    background-color: #1F2937; /* Background baris email lebih gelap */
-    padding: 0.75rem 1rem; /* Padding lebih kecil */
+    background-color: #1F2937; 
+    padding: 0.75rem 1rem; 
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -608,10 +691,10 @@ body {
     color: #FFFFFF;
     font-weight: 500;
     text-decoration: underline;
-    font-size: 1rem; /* text-base */
+    font-size: 1rem; 
 }
 .c-contact-cta__email-icon {
-    width: 1.125rem; /* w-4.5 (kurang lebih) */
+    width: 1.125rem; 
     height: 1.125rem;
     margin-right: 0.5rem;
     filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
@@ -625,7 +708,7 @@ body {
 .c-contact-cta__footer-info {
     margin-top: 2rem;
     padding-top: 2rem;
-    border-top: 1px solid #4B5563; /* Garis pemisah */
+    border-top: 1px solid #4B5563; 
 }
 .c-contact-cta__footer-name {
     font-size: 1.125rem;
@@ -662,7 +745,10 @@ body {
         text-align: left;
     }
 }
-.c-footer__column {}
+.c-footer__column2 {
+    margin-left: 4rem;
+}
+
 .c-footer__title {
     font-size: 1rem;
     font-weight: 700;
@@ -702,16 +788,17 @@ body {
 }
 .c-footer__copyright {
     text-align: center;
-    font-size: 0.875rem;
-    margin-top: 2rem;
-    padding-top: 1.5rem;
+    font-size: 0.500rem;
+    margin-top: 0.5rem;
+    padding-top: 1rem;
     border-top: 1px solid #E5E7EB;
 }
 
 /* --- Mobile Responsiveness (Tambahan & Penyesuaian) --- */
 @media (max-width: 767px) {
+    .body {padding-top: 4rem; width:80% !important; align-items: center; margin-left: 3rem !important;}
     .c-navbar__desktop-menu { display: none; }
-    .c-navbar__menu { display: none; } /* Double check if this is redundant with the above */
+    .c-navbar__menu { display: none; }
     .c-navbar__mobile-toggle { display: block; }
 
     .c-hero__supertitle { font-size: 1.5rem; }
@@ -719,45 +806,28 @@ body {
     .c-hero__subtitle { font-size: 1rem; }
     .c-hero__cta { font-size: 1rem; padding: 10px 20px; }
 
-    .c-timeline { padding: 1rem 0; }
-    .c-timeline::before {
-        left: 20px;
-        transform: translateX(0);
-    }
-    .c-timeline__item,
-    .c-timeline__item--right { /* Ensure --right variant also gets mobile styling */
-        width: 100%;
-        float: none;
-        clear: both;
-        padding-left: 45px; /* Ruang untuk dot + sedikit jarak */
-        padding-right: 10px;
-        margin-left: 0;
-        margin-right: 0;
-        text-align: left !important;
-        margin-bottom: 30px;
-    }
-    .c-timeline__point { /* Titik di mobile */
-        left: 10px; /* Adjusted to align with the new timeline line */
-        right: auto;
-        transform: none;
-        top: 0px; /* Posisikan dot di awal konten item, atau sedikit di atasnya */
-    }
-    .c-timeline__content {
-        margin-left: 0;
-        padding: 15px;
-    }
-    .c-timeline__item-title { font-size: 1.125rem; }
-
+    /* EXPRERIENCE */
     .c-skills__layout { grid-template-columns: 1fr; }
     .c-section__title--left-align { text-align: center; margin-bottom: 2rem; }
     .c-skills__subtitle { text-align: center; margin-bottom: 2rem; }
 
-    .c-project-card { flex-direction: column; }
-    .c-project-card__image-area { width: 100%; padding: 1rem; }
+    .c-project-card { flex-direction:column; }
+    .c-project-card__image-area { width: 100%; padding: 1rem;}
     .c-project-card__content-area { padding: 1rem; }
+    .c-project-card__image {
+        width: 100% !important; 
+        margin-left: auto;
+        margin-right: auto; 
+    }
 
     .c-achievement-card__images-container { flex-direction: column; gap: 0.5rem; }
     .c-achievement-card__image { max-width: 180px; }
+    .c-achievement-card__image {
+        width: 50%;
+        max-width: 150px; 
+        margin-left: auto;
+        margin-right: auto;
+    }
 
     .c-contact-cta__container { padding: 1.5rem; }
     .c-contact-cta__title { font-size: 1.5rem; }
@@ -765,7 +835,8 @@ body {
     .c-contact-cta__email-group { flex-direction: column; }
     .c-contact-cta__footer-info { text-align: center; }
 
-    .c-footer__grid { grid-template-columns: 1fr; text-align: center; }
+    .c-footer__grid { grid-template-columns: 1fr; text-align: center; margin-right: 4rem; }
     .c-footer__title { margin-top: 1rem; }
     .c-footer__column:first-child .c-footer__title { margin-top: 0; }
+
 }

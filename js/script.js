@@ -107,4 +107,18 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!copyEmailButton) console.error('ID "copyEmailButton" tidak ditemukan.');
         if (!copyFeedbackElement) console.error('ID "copyFeedback" tidak ditemukan.');
     }
+
+    const swiper = new Swiper('.achievement-slider', {
+        slidesPerView: 1, // Tampilkan 1 gambar penuh dan sedikit intipan gambar berikutnya
+        spaceBetween: 0,   // Jarak antar slide
+        centeredSlides: true, // Slide aktif akan berada di tengah
+        loop: true,           // Membuat slider bisa berputar terus menerus
+
+        // Titik navigasi (pagination)
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+    });
+
 });

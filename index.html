@@ -32,13 +32,91 @@
         }
     </script>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/styles.css">
+
+     <style>
+            /* --- Style Khusus untuk Slider Achievement --- */
+
+            /* Tampilan Desktop (Default): 3 Kolom Grid */
+            .achievement-slider {
+                overflow: visible;
+                visibility: visible;
+            }
+
+            .achievement-slider .swiper-wrapper {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+            }
+
+            .achievement-slider .swiper-slide {
+                width: 100% !important;
+                border: 1px solid #E5E7EB;
+                border-radius: 8px;
+                background-color: #F9FAFB;
+                padding: 0.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .achievement-slider .swiper-slide img {
+                max-width: 100%;
+                height: 250px;
+                object-fit: contain;
+            }
+
+            /* Sembunyikan navigasi slider di desktop */
+            .achievement-slider .swiper-pagination {
+                display: none;
+            }
+
+
+            /* Tampilan Mobile: Mengaktifkan Mode Slider */
+            @media (max-width: 767px) {
+                /* Kembalikan style flexbox yang dibutuhkan Swiper */
+                .achievement-slider .swiper-wrapper {
+                    display: flex; 
+                }
+
+                /* Atur lebar slide untuk efek slider */
+                .achievement-slider .swiper-slide {
+                    width: 80% !important;
+                    flex-shrink: 0;
+                    height: auto;
+                }
+
+                .achievement-slider .swiper-slide img {
+                    height: auto;
+                }
+
+                /* Tampilkan kembali navigasi slider di mobile */
+                .achievement-slider .swiper-pagination {
+                    display: block;
+                    position: relative;
+                    bottom: 0;
+                    margin-top: 1rem;
+                }
+                
+                /* Perbaikan centering card dari sebelumnya */
+                .c-achievement-card {
+                    padding-left: 0;
+                    padding-right: 0;
+                    background-color: transparent;
+                    border: none;
+                    box-shadow: none;
+                }
+            }
+        </style>
+
 </head>
 <body class="font-poppins bg-brand-pink-light text-brand-gray-med">
+    <div class="body" style="width: 90%; margin-left: 4rem;">
 
     <header class="c-navbar"> 
         <div class="c-navbar__container">
@@ -90,53 +168,33 @@
             </div>
         </section>
 
-        <section id="experience" class="c-section bg-brand-white">
-            <div class="c-section__container">
-                <h2 class="c-section__title">EXPERIENCE</h2>
-                <div class="c-timeline">
-                    <div class="c-timeline__item">
-                        <div class="c-timeline__point"></div>
-                        <div class="c-timeline__content">
-                            <h3 class="c-timeline__item-title">Community Writer</h3>
-                            <p class="c-timeline__item-date">June 2022 - Desember 2023</p>
-                        </div>
-                    </div>
-                    <div class="c-timeline__item">
-                        <div class="c-timeline__point"></div>
-                        <div class="c-timeline__content">
-                            <h3 class="c-timeline__item-title">Article Writer</h3>
-                            <p class="c-timeline__item-description">Responsibilities include writing articles in diverse fields (technology, health, finance, lifestyle), conducting in-depth research, optimizing content for search engines (SEO), and performing thorough editing and proofreading.</p>
-                        </div>
-                    </div>
-                    <div class="c-timeline__item">
-                        <div class="c-timeline__point"></div>
-                        <div class="c-timeline__content">
-                            <h3 class="c-timeline__item-title">PT Trakindo Utama</h3>
-                            <p class="c-timeline__item-date">June 2022 - Desember 2023</p>
-                        </div>
-                    </div>
-                    <div class="c-timeline__item">
-                        <div class="c-timeline__point"></div>
-                        <div class="c-timeline__content">
-                            <h3 class="c-timeline__item-title">On-The Job Training</h3>
-                            <p class="c-timeline__item-description">Handled daily data operations (entry, processing, analysis) with CMS and SAP for accuracy. Provided insightful reports, managed administrative documents (e.g., invoices), and ensured consistent, accurate data across company systems.</p>
-                        </div>
-                    </div>
-                    <div class="c-timeline__item">
-                        <div class="c-timeline__point"></div>
-                        <div class="c-timeline__content">
-                            <h3 class="c-timeline__item-title">Coming Soon :)</h3>
-                        </div>
-                    </div>
-                    <div class="c-timeline__item">
-                        <div class="c-timeline__point"></div>
-                        <div class="c-timeline__content">
-                            <h3 class="c-timeline__item-title">Open To Work</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section id="experience" class="c-section bg-brand-white rounded-2xl">
+        <div class="c-section__container">
+            <h2 class="c-section__title">EXPERIENCE</h2>
+        </div>
+
+        <div class="px-4 sm:px-8 lg:px-12">
+        <ol class="relative border-s" style="border-color: #FFB2C5;">                  
+            <li class="mb-10 ms-4">
+                <div class="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-white" style="background-color: #FFB2C5;"></div>
+                <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Juni 2022 - Desember 2023</time>
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Community Writer / Article Writer</h3>
+                <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Responsibilities include writing articles in diverse fields (technology, health, finance, lifestyle), conducting in-depth research, optimizing content for search engines (SEO), and performing thorough editing and proofreading.</p>
+            </li>
+            <li class="mb-10 ms-4">
+                <div class="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-white" style="background-color: #FFB2C5;"></div>
+                <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Juni 2022 - Desember 2023</time>
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">On-The Job Training - PT Trakindo Utama</h3>
+                <p class="text-base font-normal text-gray-500 dark:text-gray-400">Handled daily data operations (entry, processing, analysis) with CMS and SAP for accuracy. Provided insightful reports, managed administrative documents (e.g., invoices), and ensured consistent, accurate data across company systems.</p>
+            </li>
+            <li class="ms-4">
+                <div class="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-white" style="background-color: #FFB2C5;"></div>
+                <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Coming Soon :)</time>
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Open To Work</h3>
+            </li>
+        </ol>
+        </div>
+    </section>
 
         <section id="skills" class="c-section bg-brand-pink-light">
             <div class="c-section__container c-skills__layout">
@@ -178,8 +236,8 @@
             </div>
         </section>
 
-        <section id="projects" class="c-section bg-brand-white">
-            <div class="c-section__container">
+        <section id="projects" class="project" style="background-color: #FAE8ED; width: 80%; margin-left: auto; margin-right: auto; border-radius: 1rem; margin-bottom: 2rem;">
+            <div class="container-project">
                 <h2 class="c-section__title">MY PROJECT</h2>
                 <div class="c-card c-project-card">
                     <div class="c-project-card__image-area">
@@ -200,15 +258,25 @@
             </div>
         </section>
 
-        <section id="achievements" class="c-section bg-brand-pink-light">
-            <div class="c-section__container">
+        <section id="achievements" class="project" style="background-color: #FAE8ED; width: 80%; margin-left: auto; margin-right: auto; border-radius: 1rem; margin-bottom: 2rem;">
+            <div class="container-project">
                 <h2 class="c-section__title">ACHIEVEMENT</h2>
                 <div class="c-card c-achievement-card">
-                    <div class="c-achievement-card__images-container">
-                        <img src="images/achivement1.svg" alt="PKM KC Achievement Image 1" class="c-achievement-card__image">
-                        <img src="images/achivement2.svg" alt="PKM KC Achievement Image 2" class="c-achievement-card__image">
-                        <img src="images/achivement3.svg" alt="PKM KC Achievement Image 3" class="c-achievement-card__image">
+                    <div class="swiper achievement-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="images/achivement1.svg" alt="PKM KC Achievement Image 1" class="c-achievement-card__image">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/achivement2.svg" alt="PKM KC Achievement Image 2" class="c-achievement-card__image">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/achivement3.svg" alt="PKM KC Achievement Image 3" class="c-achievement-card__image">
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
                     </div>
+
                     <div class="c-achievement-card__content">
                         <h3 class="c-achievement-card__title">
                             2nd Place Winner - PKM-KC <span class="font-normal">by Asosiasi MIPA LPTK Indonesia</span>
@@ -226,8 +294,13 @@
                 </div>
             </div>
         </section>
+    </main>
+    </div>
 
-        <section id="contact" class="c-contact-cta">
+    <footer class="c-footer">
+        <div class="c-footer__container" style="width: 90%;">
+
+            <section id="contact" class="c-contact-cta">
             <div class="c-contact-cta__container">
                 <div class="c-contact-cta__header">
                     <h2 class="c-contact-cta__title">INTERESTED TO WORKING TOGETHER?</h2>
@@ -241,27 +314,17 @@
                     <button id="copyEmailButton" class="c-button c-button--copy">COPY</button>
                 </div>
                 <span id="copyFeedback" class="c-contact-cta__feedback" style="display: none;">Email tersalin!</span>
-
-                <div class="c-contact-cta__footer-info">
-                    <h3 class="c-contact-cta__footer-name">ARSHANDA RIZA PUTRI</h3>
-                    <p class="c-contact-cta__footer-desc">
-                        Informatics Engineering student interested in Frontend Development, Web Development, and Data Analysis. Skilled with frontend tools (HTML, CSS, JavaScript, React, Next.js) and Python.
-                    </p>
-                </div>
             </div>
         </section>
-    </main>
 
-    <footer class="c-footer">
-        <div class="c-footer__container">
             <div class="c-footer__grid">
-                <div class="c-footer__column">
+                <div class="c-footer__column2">
                     <h4 class="c-footer__title">ARSHANDA RIZA PUTRI</h4>
                     <p class="c-footer__description">
-                        Passionate Informatics Engineering student focused on creating impactful digital experiences.
+                       Informatics Engineering student who interested in Frontend Development, Web Development, and Data Analysis. Skilled with frontend tools (HTML, CSS, JavaScript, React, Next.js) and Python.
                     </p>
                 </div>
-                <div class="c-footer__column">
+                <div class="c-footer__column2">
                     <h4 class="c-footer__title">SITEMAP</h4>
                     <ul class="c-footer__links">
                         <li><a href="#hero" class="c-footer__link">Home</a></li>
@@ -272,7 +335,7 @@
                         <li><a href="#contact" class="c-footer__link">Contact</a></li>
                     </ul>
                 </div>
-                <div class="c-footer__column">
+                <div class="c-footer__column2" style="margin-left:0 !important;">
                     <h4 class="c-footer__title">CONTACT ME</h4>
                     <ul class="c-footer__contact-links">
                         <li>
@@ -298,12 +361,13 @@
                     </ul>
                 </div>
             </div>
-            <div class="c-footer__copyright">
+            <div class="c-footer__copyright" style="80%">
                 &copy; <span id="currentYear"></span> Arshanda Riza Putri. All Rights Reserved.
             </div>
         </div>
     </footer>
 
     <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>
