@@ -108,17 +108,29 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!copyFeedbackElement) console.error('ID "copyFeedback" tidak ditemukan.');
     }
 
-    const swiper = new Swiper('.achievement-slider', {
-        slidesPerView: 1, // Tampilkan 1 gambar penuh dan sedikit intipan gambar berikutnya
-        spaceBetween: 0,   // Jarak antar slide
-        centeredSlides: true, // Slide aktif akan berada di tengah
-        loop: true,           // Membuat slider bisa berputar terus menerus
-
+    const achievementSwiper = new Swiper('.achievement-slider', {
+        // Opsi default (untuk mobile)
+        slidesPerView: 1.2,
+        spaceBetween: 15,
+        centeredSlides: true,
+        loop: true,
+        
         // Titik navigasi (pagination)
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
         },
+
+        // Breakpoints untuk mengubah tampilan di layar yang lebih besar
+        breakpoints: {
+            // Jika lebar layar 768px atau lebih besar (tampilan tablet/desktop)
+            768: {
+              slidesPerView: 3,    // Tampilkan 3 slide sekaligus
+              spaceBetween: 20,    // Jarak antar slide sedikit lebih besar
+              centeredSlides: false, // Tidak perlu center jika semua terlihat
+              loop: false,           // Loop tidak perlu jika semua slide sudah terlihat
+            }
+        }
     });
 
 });
