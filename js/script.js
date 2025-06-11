@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- Mobile Menu Toggle ---
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
-    // Ambil semua link di kedua menu untuk menutup menu mobile saat link di-klik
     const allNavLinks = document.querySelectorAll('.c-navbar__link, .c-navbar__mobile-link');
 
     if (mobileMenuButton && mobileMenu) {
@@ -59,54 +58,31 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // --- Fungsi untuk Tombol Copy Email ---
-    const emailTextElement = document.getElementById('emailToCopy');
-    const copyEmailButton = document.getElementById('copyEmailButton');
-    const copyFeedbackElement = document.getElementById('copyFeedback');
+   const emailTextElement = document.getElementById('emailToCopy');
+const copyEmailButton = document.getElementById('copyEmailButton');
 
-    if (copyEmailButton && emailTextElement && copyFeedbackElement) {
-        copyEmailButton.addEventListener('click', function() {
-            const emailText = emailTextElement.textContent; // Ambil teks dari span
+if (copyEmailButton && emailTextElement) {
+    copyEmailButton.addEventListener('click', function() {
+        const emailText = emailTextElement.textContent;
 
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(emailText)
-                    .then(() => {
-                        // Berhasil menyalin
-                        copyFeedbackElement.textContent = 'Email tersalin!';
-                        copyFeedbackElement.style.color = '#F472B6'; // brand-pink-dark (atau warna sukses lainnya)
-                        copyFeedbackElement.style.display = 'inline-block';
-                        setTimeout(() => {
-                            copyFeedbackElement.style.display = 'none';
-                        }, 2000); // Sembunyikan pesan feedback setelah 2 detik
-                    })
-                    .catch(err => {
-                        // Gagal menyalin
-                        console.error('Gagal menyalin email: ', err);
-                        copyFeedbackElement.textContent = 'Gagal menyalin! Coba manual.';
-                        copyFeedbackElement.style.color = 'red'; // Warna error
-                        copyFeedbackElement.style.display = 'inline-block';
-                         setTimeout(() => {
-                            copyFeedbackElement.style.display = 'none';
-                            copyFeedbackElement.style.color = ''; // Reset warna jika perlu
-                        }, 3000); // Tampilkan pesan error sedikit lebih lama
-                    });
-            } else {
-                // Fallback atau pesan jika navigator.clipboard tidak didukung (sangat jarang untuk browser modern)
-                console.warn('navigator.clipboard API tidak tersedia.');
-                copyFeedbackElement.textContent = 'Fitur copy tidak didukung browser ini.';
-                copyFeedbackElement.style.color = 'orange'; // Warna warning
-                copyFeedbackElement.style.display = 'inline-block';
-                setTimeout(() => {
-                    copyFeedbackElement.style.display = 'none';
-                    copyFeedbackElement.style.color = '';
-                }, 3000);
-            }
-        });
-    } else {
-        // Log jika elemen-elemen untuk copy email tidak ditemukan, membantu debugging
-        if (!emailTextElement) console.error('ID "emailToCopy" tidak ditemukan.');
-        if (!copyEmailButton) console.error('ID "copyEmailButton" tidak ditemukan.');
-        if (!copyFeedbackElement) console.error('ID "copyFeedback" tidak ditemukan.');
-    }
+        navigator.clipboard.writeText(emailText)
+            .then(() => {
+                // --- JIKA BERHASIL ---
+                // Tampilkan alert sukses yang sederhana
+                alert('Email berhasil disalin ke clipboard!');
+            })
+            .catch(err => {
+                // --- JIKA GAGAL ---
+                console.error('Gagal menyalin email: ', err);
+                // Tampilkan alert gagal yang sederhana
+                alert('Gagal menyalin email. Silakan coba salin secara manual.');
+            });
+    });
+} else {
+    // Bagian ini untuk membantu debugging jika ada elemen yang tidak ditemukan
+    if (!emailTextElement) console.error('ID "emailToCopy" tidak ditemukan.');
+    if (!copyEmailButton) console.error('ID "copyEmailButton" tidak ditemukan.');
+}
 
     const achievementSwiper = new Swiper('.achievement-slider', {
         // Opsi default (untuk mobile)

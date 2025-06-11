@@ -39,84 +39,8 @@
 
     <link rel="stylesheet" href="css/styles.css">
 
-     <!-- <style>
-            /* --- Style Khusus untuk Slider Achievement --- */
-
-            /* Tampilan Desktop (Default): 3 Kolom Grid */
-            .achievement-slider {
-                overflow: visible;
-                visibility: visible;
-            }
-
-            .achievement-slider .swiper-wrapper {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 1rem;
-            }
-
-            .achievement-slider .swiper-slide {
-                width: 100% !important;
-                border: 1px solid #E5E7EB;
-                border-radius: 8px;
-                background-color: #F9FAFB;
-                padding: 0.5rem;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .achievement-slider .swiper-slide img {
-                max-width: 100%;
-                height: 250px;
-                object-fit: contain;
-            }
-
-            /* Sembunyikan navigasi slider di desktop */
-            .achievement-slider .swiper-pagination {
-                display: none;
-            }
-
-
-            /* Tampilan Mobile: Mengaktifkan Mode Slider */
-            @media (max-width: 767px) {
-                /* Kembalikan style flexbox yang dibutuhkan Swiper */
-                .achievement-slider .swiper-wrapper {
-                    display: flex; 
-                }
-
-                /* Atur lebar slide untuk efek slider */
-                .achievement-slider .swiper-slide {
-                    width: 80% !important;
-                    flex-shrink: 0;
-                    height: auto;
-                }
-
-                .achievement-slider .swiper-slide img {
-                    height: auto;
-                }
-
-                /* Tampilkan kembali navigasi slider di mobile */
-                .achievement-slider .swiper-pagination {
-                    display: block;
-                    position: relative;
-                    bottom: 0;
-                    margin-top: 1rem;
-                }
-                
-                /* Perbaikan centering card dari sebelumnya */
-                .c-achievement-card {
-                    padding-left: 0;
-                    padding-right: 0;
-                    background-color: transparent;
-                    border: none;
-                    box-shadow: none;
-                }
-            }
-        </style> -->
-
 </head>
-<body class="font-poppins bg-brand-pink-light text-brand-gray-med">
-    <div class="body" style="width: 90%; margin-left: 4rem;">
+<body class="font-poppins bg-brand-pink-light text-brand-gray-med" style="margin-top: 2rem;">
 
     <header class="c-navbar"> 
         <div class="c-navbar__container">
@@ -168,6 +92,7 @@
             </div>
         </section>
 
+<div class="body" style="width: 80%; margin-left: 6rem;">
     <section id="experience" class="c-section bg-brand-white rounded-2xl">
         <div class="c-section__container">
             <h2 class="c-section__title">EXPERIENCE</h2>
@@ -178,19 +103,19 @@
             <li class="mb-10 ms-4">
                 <div class="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-white" style="background-color: #FFB2C5;"></div>
                 <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Juni 2022 - Desember 2023</time>
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Community Writer / Article Writer</h3>
+                <h3 class="text-m font-semibold text-gray-900 dark:text-white">Community Writer / Article Writer</h3>
                 <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Responsibilities include writing articles in diverse fields (technology, health, finance, lifestyle), conducting in-depth research, optimizing content for search engines (SEO), and performing thorough editing and proofreading.</p>
             </li>
             <li class="mb-10 ms-4">
                 <div class="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-white" style="background-color: #FFB2C5;"></div>
                 <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Juni 2022 - Desember 2023</time>
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">On-The Job Training - PT Trakindo Utama</h3>
+                <h3 class="text-m font-semibold text-gray-900 dark:text-white">On-The Job Training - PT Trakindo Utama</h3>
                 <p class="text-base font-normal text-gray-500 dark:text-gray-400">Handled daily data operations (entry, processing, analysis) with CMS and SAP for accuracy. Provided insightful reports, managed administrative documents (e.g., invoices), and ensured consistent, accurate data across company systems.</p>
             </li>
             <li class="ms-4">
                 <div class="absolute w-3 h-3 rounded-full mt-1.5 -start-1.5 border border-white" style="background-color: #FFB2C5;"></div>
                 <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Coming Soon :)</time>
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Open To Work</h3>
+                <h3 class="text-m font-semibold text-gray-900 dark:text-white">...</h3>
             </li>
         </ol>
         </div>
@@ -302,21 +227,20 @@
 
             <section id="contact" class="c-contact-cta">
                 <div class="c-contact-cta__container">
-                    <div class="c-contact-cta__header">
-                        <h2 class="c-contact-cta__title">INTERESTED TO WORKING TOGETHER?</h2>
-                        <p class="c-contact-cta__subtitle">CONTACT ME!</p>
+
+                    <div class="c-contact-cta__text-group">
+                        <span class="c-contact-cta__title">INTERESTED TO WORKING TOGETHER?</span>
+                        <span class="c-contact-cta__subtitle">CONTACT ME!</span>
                     </div>
-                    <div class="c-contact-cta__email-group">
+
+                    <div class="c-contact-cta__action-group">
                         <a id="emailLink" href="mailto:arshandariza@gmail.com" class="c-contact-cta__email-link">
                             <img src="images/mail.svg" alt="Email" class="c-contact-cta__email-icon">
-                            
-                            <span class="email-text-truncate" id="emailToCopy">arshandariza@gmail.com</span>
+                            <span id="emailToCopy">arshandariza@gmail.com</span>
                         </a>
-                        
                         <button id="copyEmailButton" class="c-button c-button--copy">COPY</button>
-
                     </div>
-                    <span id="copyFeedback" class="c-contact-cta__feedback" style="display: none;">Email tersalin!</span>
+                    <div id="copyFeedback" class="c-contact-cta__feedback" style="display: none;">Email tersalin!</div>
                 </div>
             </section>
 
